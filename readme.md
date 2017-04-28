@@ -14,7 +14,7 @@ You may run the following commands to install PHP and front end libraries from t
 
 and
 
-`npm install`
+`yarn install`
 
 Also, this project uses [Laravel Mix](https://github.com/JeffreyWay/laravel-mix/tree/master/docs#readme), so if you need to compile CSS or JavaScript assets you may run:
 
