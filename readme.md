@@ -4,27 +4,37 @@ This is a Laravel 5.4 application for managing art pieces and their associated d
 
 A "piece" can have many "detail" images.
 
-## Installing Dependencies
+## Installing
 
-Please ensure you have both [Composer](https://getcomposer.org/) and [npm](https://www.npmjs.com/) installed.
+- Please ensure you have [Composer](https://getcomposer.org/) installed.
 
-You may run the following commands to install PHP and front end libraries from the project root:
+- You may run the following commands to install PHP and front end libraries from the project root:
 
 `composer install`
 
-and
+- Make sure that your `.env` file is similar to the `.env.example` file.
+
+- Finally, setup your database in the `.env` file and then run this command to initialize the database:
+
+`php artisan migrate`
+
+## Front End Assets
+
+- Ensure you have [npm](https://www.npmjs.com/) and [Yarn](https://yarnpkg.com/en/) installed and run the following command to install the assets:
 
 `yarn install`
 
-Also, this project uses [Laravel Mix](https://github.com/JeffreyWay/laravel-mix/tree/master/docs#readme), so if you need to compile CSS or JavaScript assets you may run:
+
+- This project uses [Laravel Mix](https://github.com/JeffreyWay/laravel-mix/tree/master/docs#readme), so if you need to compile CSS or JavaScript assets you may run:
 
 `npm run dev`
 
-Finally, make sure that your `.env` file is similar to the `.env.example` file.
-
 ## Testing
 
-PHPUnit tests are included in the repository.
+- PHPUnit tests are included in the repository. You may run the following command from the project root to run the test suite:
+
+`phpunit`
+
 
 ## License
 
