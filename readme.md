@@ -8,11 +8,11 @@ A "piece" can have many "detail" images.
 
 - Please ensure you have [Composer](https://getcomposer.org/) installed.
 
-- You may run the following commands to install PHP and front end libraries from the project root:
+- You need to run the following command to install the required PHP libraries (from the project root):
 
 `composer install`
 
-- Make sure that your `.env` file is similar to the `.env.example` file.
+- Copy `.env.example` to a new file called `.env` in the project root.
 
 - Finally, setup your database in the `.env` file and then run this command to initialize the database:
 
@@ -24,7 +24,6 @@ A "piece" can have many "detail" images.
 
 `yarn install`
 
-
 - This project uses [Laravel Mix](https://github.com/JeffreyWay/laravel-mix/tree/master/docs#readme), so if you need to compile CSS or JavaScript assets you may run:
 
 `npm run dev`
@@ -34,7 +33,6 @@ A "piece" can have many "detail" images.
 - PHPUnit tests are included in the repository. You may run the following command from the project root to run the test suite:
 
 `phpunit`
-
 
 ## License
 
