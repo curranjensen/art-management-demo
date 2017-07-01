@@ -82,7 +82,9 @@ class ExportController extends Controller
      */
     public function downloadPDFDetailsList()
     {
-        return $this->PDFExporter->download(route('export.pdf.details.list.show'), 'details-list.pdf');
+        $this->PDFExporter->download(
+            view('export.pdf.absolute.details-list', ['details' => $this->getDetails()])->render(),
+             'details-list.pdf');
     }
 
     /**
@@ -90,7 +92,9 @@ class ExportController extends Controller
      */
     public function downloadPDFPiecesList()
     {
-        return $this->PDFExporter->download(route('export.pdf.pieces.list.show'), 'pieces-list.pdf');
+        return $this->PDFExporter->download(
+            view('export.pdf.absolute.pieces-list', ['pieces' => $this->getPieces()])->render(),
+             'pieces-list.pdf');
     }
 
     /**
@@ -98,7 +102,9 @@ class ExportController extends Controller
      */
     public function downloadPDFDetailsGrid()
     {
-        return $this->PDFExporter->download(route('export.pdf.details.grid.show'), 'details-grid.pdf');
+        return $this->PDFExporter->download(
+            view('export.pdf.absolute.details-grid', ['details' => $this->getDetails()])->render(),
+            'details-grid.pdf');
     }
 
     /**
@@ -106,7 +112,11 @@ class ExportController extends Controller
      */
     public function downloadPDFPiecesGrid()
     {
-        return $this->PDFExporter->download(route('export.pdf.pieces.grid.show'), 'pieces-grid.pdf');
+        set_time_limit(600);
+        return $this->PDFExporter->download(
+            view('export.pdf.absolute.pieces-grid', ['pieces' => $this->getPieces()])->render(),
+            'pieces-grid.pdf');
+
     }
 
     /**

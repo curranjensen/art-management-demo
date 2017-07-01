@@ -62,6 +62,7 @@ class EloquentPieceRepository implements PieceRepository
     public function getAllForExport()
     {
         return Piece::withCount('details')
+            ->with('thumbnail')
             ->with('details')
             ->orderBy('number')
             ->get();

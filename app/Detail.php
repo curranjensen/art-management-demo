@@ -27,6 +27,11 @@ class Detail extends Model
         return asset("storage/details/{$this->piece->number}/th_{$this->file_name}");
     }
 
+    public function getAbsoluteThumbnailAttribute()
+    {
+        return storage_path("app/public/details/{$this->piece->number}/th_{$this->file_name}");
+    }
+
     public function getExifAttribute()
     {
         return '';
@@ -35,6 +40,11 @@ class Detail extends Model
     public function getLargeAttribute()
     {
         return asset("storage/details/{$this->piece->number}/lg_{$this->file_name}");
+    }
+
+    public function getAbsoluteLargeAttribute()
+    {
+        return storage_path("app/public/details/{$this->piece->number}/lg_{$this->file_name}");
     }
 
     public function getOriginalAttribute()

@@ -33,7 +33,7 @@
 
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">Export to PDF (Experimental)</h3>
+            <h3 class="panel-title">Export to PDF (Please be patient, these can take a while to render)</h3>
         </div>
         <div class="panel-body">
             <form class="form-horizontal">
@@ -43,15 +43,7 @@
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Export all pieces to PDF (Grid)</label>
-                    <a href="{{ route('export.pdf.pieces.grid.show') }}" class="btn btn-primary"><span class="glyphicon glyphicon-th"></span> All Pieces - Grid</a>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-3 control-label">Export all details to PDF (List)</label>
-                    <a href="{{ route('export.pdf.details.list.download') }}" class="btn btn-primary"><span class="glyphicon glyphicon-list"></span> All Details - List</a>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-3 control-label">Export all details to PDF (Grid)</label>
-                    <a href="{{ route('export.pdf.details.grid.show') }}" class="btn btn-primary"><span class="glyphicon glyphicon-th"></span> All Details - Grid</a>
+                    <a href="{{ route('export.pdf.pieces.grid.download') }}" class="btn btn-primary"><span class="glyphicon glyphicon-th"></span> All Pieces - Grid</a>
                 </div>
             </form>
         </div>
