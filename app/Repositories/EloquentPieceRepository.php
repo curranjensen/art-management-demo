@@ -31,6 +31,7 @@ class EloquentPieceRepository implements PieceRepository
             'notes' => $attributes['notes'],
             'status' => $attributes['status'],
             'licences' => $attributes['licences'],
+            'media_id' => $attributes['media_id'],
         ]);
     }
 
@@ -62,6 +63,7 @@ class EloquentPieceRepository implements PieceRepository
         $piece->notes = $attributes['notes'];
         $piece->status = $attributes['status'];
         $piece->licences = $attributes['licences'];
+        $piece->media_id = $attributes['media_id'];
         $piece->save();
     }
 

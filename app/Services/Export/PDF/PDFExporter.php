@@ -41,7 +41,7 @@ class PDFExporter
 
         $dompdf->stream();
 
-        $file = storage_path("app/public/export/{$fileName}");
+        $file = "/public/export/{$fileName}";
 
         Storage::put($file, $output);
 

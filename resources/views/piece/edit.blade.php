@@ -44,6 +44,21 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label class="col-sm-2 control-label">Medium</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="media_id">
+                            <option value="">Please select...</option>
+                            @foreach($media as $medium)
+                                @if($medium->id === $piece->media_id)
+                                    <option selected="selected" value="{{ $medium->id }}">{{ $medium->type }}</option>
+                                @else
+                                    <option value="{{ $medium->id }}">{{ $medium->type }}</option>
+                                @endif
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label class="col-sm-2 control-label">Dimensions</label>
                     <div class="col-sm-10">
                         <input value="{{ old('size') ?? $piece->size }}" name="size" type="text" class="form-control" placeholder="Size">

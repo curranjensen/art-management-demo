@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePiecesTable extends Migration
+class CreateMediaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreatePiecesTable extends Migration
      */
     public function up()
     {
-        Schema::create('pieces', function (Blueprint $table) {
+        Schema::create('media', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedSmallInteger('number')->unique();
-            $table->string('name')->nullable();
-            $table->string('size')->nullable();
-            $table->unsignedTinyInteger('month')->nullable();
-            $table->unsignedSmallInteger('year')->nullable();
+            $table->string('type');
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ class CreatePiecesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pieces');
+        Schema::dropIfExists('media');
     }
 }

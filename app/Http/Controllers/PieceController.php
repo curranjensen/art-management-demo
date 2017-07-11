@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Piece;
+use App\Medium;
 use Illuminate\Http\Request;
 use App\Repositories\PieceRepository;
 use App\Http\Requests\CreatePieceRequest;
@@ -48,7 +49,9 @@ class PieceController extends Controller
     {
         $suggestedPieceNumber = $this->repository->getNextPieceNumber();
 
-        return view('piece.create', compact('suggestedPieceNumber'));
+        $media = Medium::all();
+
+        return view('piece.create', compact('suggestedPieceNumber', 'media'));
     }
 
     /**
@@ -60,7 +63,7 @@ class PieceController extends Controller
     public function store(CreatePieceRequest $request)
     {
         $piece = $this->repository->create($request->only([
-            'name', 'size', 'month', 'year', 'number', 'notes', 'status', 'licences'
+            'name', 'size', 'month', 'year', 'number', 'notes', 'status', 'licences', 'media_id'
         ]));
 
         flash('The piece has been created!', 'success');
@@ -93,7 +96,9 @@ class PieceController extends Controller
         $previous = $this->repository->getPrevious($piece);
         $next = $this->repository->getNext($piece);
 
-        return view('piece.edit', compact('piece', 'previous', 'next'));
+        $media = Medium::all();
+
+        return view('piece.edit', compact('piece', 'previous', 'next', 'media'));
     }
 
     /**
@@ -106,7 +111,7 @@ class PieceController extends Controller
     public function update(ModifyPieceRequest $request, Piece $piece)
     {
         $this->repository->update($piece, $request->only([
-            'name', 'size', 'month', 'year', 'licences', 'notes', 'status'
+            'name', 'size', 'month', 'year', 'licences', 'notes', 'status', 'media_id'
         ]));
 
         flash('The piece has been updated!', 'success');

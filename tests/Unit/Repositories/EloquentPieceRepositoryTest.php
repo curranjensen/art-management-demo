@@ -59,6 +59,10 @@ class EloquentPieceRepositoryTest extends TestCase
             'month' => 1,
             'year' => 2004,
             'number' => 1,
+            'notes' => 'A note',
+            'status' => 'A status',
+            'licences' => 'A licence',
+            'media_id' => 1
         ];
 
         $this->repo->create($attributes);
@@ -69,6 +73,10 @@ class EloquentPieceRepositoryTest extends TestCase
             'month' => 1,
             'year' => 2004,
             'number' => 1,
+            'notes' => 'A note',
+            'status' => 'A status',
+            'licences' => 'A licence',
+            'media_id' => 1
         ])->first();
 
         $this->assertNotNull($piece);
@@ -133,6 +141,10 @@ class EloquentPieceRepositoryTest extends TestCase
             'size' => '30 x 30',
             'month' => 1,
             'year' => 2004,
+            'notes' => 'A note',
+            'status' => 'A status',
+            'licences' => 'A licence',
+            'media_id' => 1
         ];
 
         $this->repo->update($piece, $attributes);
@@ -142,6 +154,10 @@ class EloquentPieceRepositoryTest extends TestCase
             'size' => '30 x 30',
             'month' => 1,
             'year' => 2004,
+            'notes' => 'A note',
+            'status' => 'A status',
+            'licences' => 'A licence',
+            'media_id' => 1
         ])->first();
 
         $this->assertNotNull($piece);

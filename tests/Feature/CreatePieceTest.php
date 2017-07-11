@@ -22,6 +22,7 @@ class CreatePieceTest extends TestCase
     public function it_can_create_a_new_piece()
     {
         $response = $this->post('/pieces', [
+            'media_id' => 1,
             'name' => 'First Painting',
             'size' => '30 x 30',
             'month' => 1,
@@ -36,6 +37,7 @@ class CreatePieceTest extends TestCase
         $response->assertRedirect(route('pieces.edit', 1));
 
         $piece = Piece::where([
+            'media_id' => 1,
             'name' => 'First Painting',
             'size' => '30 x 30',
             'month' => 1,

@@ -1,8 +1,9 @@
 <?php
 
+use App\Medium;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class MediaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(MediaSeeder::class);
+        Medium::populate();
     }
 }

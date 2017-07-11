@@ -41,6 +41,7 @@ class EditPieceTest extends TestCase
     public function it_can_update_a_piece()
     {
         $piece = factory(Piece::class)->create([
+            'media_id' => 1,
             'number' => 1,
             'name' => 'First Painting',
             'size' => '30 x 30',
@@ -52,6 +53,7 @@ class EditPieceTest extends TestCase
         ]);
 
         $response = $this->patch("/pieces/{$piece->number}", [
+            'media_id' => 2,
             'name' => 'Updated Name',
             'size' => '40 x 40',
             'month' => 2,
@@ -64,6 +66,7 @@ class EditPieceTest extends TestCase
         $response->assertStatus(302);
 
         $piece = Piece::where([
+            'media_id' => 2,
             'number' => 1,
             'name' => 'Updated Name',
             'size' => '40 x 40',
