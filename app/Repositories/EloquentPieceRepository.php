@@ -28,6 +28,9 @@ class EloquentPieceRepository implements PieceRepository
             'month' => $attributes['month'],
             'year' => $attributes['year'],
             'number' => $attributes['number'],
+            'notes' => $attributes['notes'],
+            'status' => $attributes['status'],
+            'licences' => $attributes['licences'],
         ]);
     }
 
@@ -56,6 +59,9 @@ class EloquentPieceRepository implements PieceRepository
         $piece->size = $attributes['size'];
         $piece->month = $attributes['month'];
         $piece->year = $attributes['year'];
+        $piece->notes = $attributes['notes'];
+        $piece->status = $attributes['status'];
+        $piece->licences = $attributes['licences'];
         $piece->save();
     }
 

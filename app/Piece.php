@@ -15,7 +15,10 @@ class Piece extends Model
         'size',
         'month',
         'year',
-        'number'
+        'number',
+        'notes',
+        'status',
+        'licences'
     ];
 
     /**

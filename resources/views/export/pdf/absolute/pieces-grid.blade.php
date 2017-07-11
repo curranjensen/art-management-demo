@@ -1,9 +1,9 @@
 @extends('layouts.export.blank')
-@section('title', 'Pieces (Grid)')
+@section('title', 'Images (Grid)')
 @section('content')
     <div class='page-header'>
         <div class="clearfix">
-            <h3 class="pull-left">Pieces ({{ $pieces->count() }})</h3>
+            <h3 class="pull-left">Images ({{ $pieces->count() }})</h3>
             <h3 class="pull-right">{{ config('owner.company') }} - {{ \Carbon\Carbon::now()->format('F j, Y') }}</h3>
         </div>
     </div>

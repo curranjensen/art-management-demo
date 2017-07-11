@@ -14,7 +14,7 @@
     <table class="table table-striped table-condensed">
         <thead>
             <tr>
-                <th>Piece ID <a href="?sort=number-asc"><span class="glyphicon glyphicon-sort-by-attributes"></span></a> <a href="?sort=number-desc"><span class="glyphicon glyphicon-sort-by-attributes-alt"></span></a></th>
+                <th>Image ID <a href="?sort=number-asc"><span class="glyphicon glyphicon-sort-by-attributes"></span></a> <a href="?sort=number-desc"><span class="glyphicon glyphicon-sort-by-attributes-alt"></span></a></th>
                 <th>Thumbnail</th>
                 <th>File Name</th>
                 <th>Detail ID <a href="?sort=id-asc"><span class="glyphicon glyphicon-sort-by-attributes"></span></a> <a href="?sort=id-desc"><span class="glyphicon glyphicon-sort-by-attributes-alt"></span></a></th>

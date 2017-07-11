@@ -12,7 +12,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
             <ul class="nav navbar-nav navbar-right">
-                <li class="{{ request()->is('pieces*') ? 'active' : '' }}"><a href="{{ route('pieces.index') }}">Pieces</a></li>
+                <li class="{{ request()->is('pieces*') ? 'active' : '' }}"><a href="{{ route('pieces.index') }}">Images</a></li>
                 <li class="dropdown {{ request()->is('details*') ? 'active' : '' }}">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Details <span class="caret"></span></a>
                     <ul class="dropdown-menu">

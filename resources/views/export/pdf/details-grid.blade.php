@@ -22,7 +22,7 @@
                     </td>
                     <td>
                         <p><strong>Name: </strong>{{ $detail->piece->name() }}</p>
-                        <p><strong>Piece ID: </strong>{{ $detail->piece->number }}</p>
+                        <p><strong>Image ID: </strong>{{ $detail->piece->number }}</p>
                         <p><strong>Detail ID: </strong>{{ $detail->id }}</p>
                         <p><strong>File Name: </strong>{{ $detail->piece->number . '/' . $detail->file_name }}</p>
                         <p><strong>Original File Name: </strong>{{ $detail->original_file_name }}</p>

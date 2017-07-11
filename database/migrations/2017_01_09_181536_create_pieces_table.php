@@ -18,6 +18,9 @@ class CreatePiecesTable extends Migration
             $table->unsignedSmallInteger('number')->unique();
             $table->string('name')->nullable();
             $table->string('size')->nullable();
+            $table->string('status')->nullable();
+            $table->text('notes')->nullable();
+            $table->text('licences')->nullable();
             $table->unsignedTinyInteger('month')->nullable();
             $table->unsignedSmallInteger('year')->nullable();
             $table->timestamps();

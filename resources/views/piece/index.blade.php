@@ -1,22 +1,22 @@
 @extends('layouts.main')
-@section('title', 'Pieces')
+@section('title', 'Images')
 @section('content')
     @component('components.breadcrumbs')
-        <li class="active">Pieces</li>
+        <li class="active">Images</li>
     @endcomponent
     <div class='page-header'>
         <div class='btn-toolbar pull-right'>
-            <a href="{{ route('pieces.create') }}" class='btn btn-primary'><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add a New Piece </a>
+            <a href="{{ route('pieces.create') }}" class='btn btn-primary'><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add a New Image </a>
             <a href="{{ route('details.index') }}" class='btn btn-success'><span class="glyphicon glyphicon-list" aria-hidden="true"></span> All Details </a>
         </div>
-        <h3>Pieces ({{$pieces->total()}})</h3>
+        <h3>Images ({{$pieces->total()}})</h3>
     </div>
     <table class="table table-striped table-condensed">
         <thead>
             <tr>
-                <th>Piece ID <a href="?sort=number-asc"><span class="glyphicon glyphicon-sort-by-attributes"></span></a> <a href="?sort=number-desc"><span class="glyphicon glyphicon-sort-by-attributes-alt"></span></a></th>
+                <th>Image ID <a href="?sort=number-asc"><span class="glyphicon glyphicon-sort-by-attributes"></span></a> <a href="?sort=number-desc"><span class="glyphicon glyphicon-sort-by-attributes-alt"></span></a></th>
                 <th>Thumbnail</th>
-                <th>Name <a href="?sort=name-asc"><span class="glyphicon glyphicon-sort-by-attributes"></span></a> <a href="?sort=name-desc"><span class="glyphicon glyphicon-sort-by-attributes-alt"></span></a></th>
+                <th>Title <a href="?sort=name-asc"><span class="glyphicon glyphicon-sort-by-attributes"></span></a> <a href="?sort=name-desc"><span class="glyphicon glyphicon-sort-by-attributes-alt"></span></a></th>
                 <th>Details</th>
                 <th>Dimensions</th>
                 <th>Month</th>

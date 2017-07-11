@@ -27,6 +27,9 @@ class CreatePieceTest extends TestCase
             'month' => 1,
             'year' => 2004,
             'number' => 1,
+            'notes' => 'A note',
+            'status' => 'A status',
+            'licences' => 'A licence'
         ]);
 
         $response->assertStatus(302);
@@ -38,6 +41,9 @@ class CreatePieceTest extends TestCase
             'month' => 1,
             'year' => 2004,
             'number' => 1,
+            'notes' => 'A note',
+            'status' => 'A status',
+            'licences' => 'A licence'
         ])->first();
 
         $this->assertNotNull($piece);

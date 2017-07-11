@@ -18,7 +18,10 @@ class EditPieceTest extends TestCase
             'size' => '30 x 30',
             'name' => 'First Piece',
             'month' => 3,
-            'year' => 2004
+            'year' => 2004,
+            'notes' => 'A note',
+            'status' => 'A status',
+            'licences' => 'A licence'
         ]);
 
         $response = $this->get("/pieces/{$piece->number}/edit");
@@ -29,6 +32,9 @@ class EditPieceTest extends TestCase
         $response->assertSee('First Piece');
         $response->assertSee('3');
         $response->assertSee('2004');
+        $response->assertSee('A note');
+        $response->assertSee('A status');
+        $response->assertSee('A licence');
     }
 
     /** @test */
@@ -40,6 +46,9 @@ class EditPieceTest extends TestCase
             'size' => '30 x 30',
             'month' => 1,
             'year' => 2004,
+            'notes' => 'A note',
+            'status' => 'A status',
+            'licences' => 'A licence'
         ]);
 
         $response = $this->patch("/pieces/{$piece->number}", [
@@ -47,6 +56,9 @@ class EditPieceTest extends TestCase
             'size' => '40 x 40',
             'month' => 2,
             'year' => 2005,
+            'notes' => 'A new note',
+            'status' => 'A new status',
+            'licences' => 'A new licence'
         ]);
 
         $response->assertStatus(302);
@@ -57,6 +69,9 @@ class EditPieceTest extends TestCase
             'size' => '40 x 40',
             'month' => 2,
             'year' => 2005,
+            'notes' => 'A new note',
+            'status' => 'A new status',
+            'licences' => 'A new licence'
         ])->first();
 
         $this->assertNotNull($piece);

@@ -17,11 +17,11 @@
             <form class="form-horizontal">
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Export inventory to Excel</label>
-                    <a href="{{ route('export.excel.combined') }}" class="btn btn-primary">Inventory - All Pieces &amp; Details</a>
+                    <a href="{{ route('export.excel.combined') }}" class="btn btn-primary">Inventory - All Images &amp; Details</a>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">Export all pieces to Excel</label>
-                    <a href="{{ route('export.excel.pieces') }}" class="btn btn-primary">All Pieces</a>
+                    <label class="col-sm-3 control-label">Export all Images to Excel</label>
+                    <a href="{{ route('export.excel.pieces') }}" class="btn btn-primary">All Images</a>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">Export all details to Excel</label>
@@ -38,12 +38,12 @@
         <div class="panel-body">
             <form class="form-horizontal">
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">Export all pieces to PDF (List)</label>
-                    <a href="{{ route('export.pdf.pieces.list.download') }}" class="btn btn-primary"><span class="glyphicon glyphicon-list"></span> All Pieces - List</a>
+                    <label class="col-sm-3 control-label">Export all Images to PDF (List)</label>
+                    <a href="{{ route('export.pdf.pieces.list.download') }}" class="btn btn-primary"><span class="glyphicon glyphicon-list"></span> All Images - List</a>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">Export all pieces to PDF (Grid)</label>
-                    <a href="{{ route('export.pdf.pieces.grid.download') }}" class="btn btn-primary"><span class="glyphicon glyphicon-th"></span> All Pieces - Grid</a>
+                    <label class="col-sm-3 control-label">Export all Images to PDF (Grid)</label>
+                    <a href="{{ route('export.pdf.pieces.grid.download') }}" class="btn btn-primary"><span class="glyphicon glyphicon-th"></span> All Images - Grid</a>
                 </div>
             </form>
         </div>

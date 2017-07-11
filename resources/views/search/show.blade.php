@@ -7,7 +7,7 @@
     <div class="page-header clearfix">
         <div class="pull-left">
             <h3>{{ $pieces->total() + $details->total() }} results for "{{ $query }}"</h3>
-            <p>{{ $piecesCount = $pieces->total() }} <a href="#pieces">{{ str_plural('piece', $piecesCount) }}</a> found. / {{ $detailsCount = $details->total() }} <a href="#details">{{ str_plural('detail', $detailsCount) }}</a> found.</p>
+            <p>{{ $piecesCount = $pieces->total() }} <a href="#pieces">{{ str_plural('image', $piecesCount) }}</a> found. / {{ $detailsCount = $details->total() }} <a href="#details">{{ str_plural('detail', $detailsCount) }}</a> found.</p>
         </div>
         <h3 class="pull-right">
             <form class="form-inline" method="get" action="{{ route('search.search') }}">
@@ -19,7 +19,7 @@
 
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title"><a name="pieces">Pieces ({{ $piecesCount }})</a></h3>
+            <h3 class="panel-title"><a name="pieces">Images ({{ $piecesCount }})</a></h3>
         </div>
         <div class="panel-body">
             @if($piecesCount)
@@ -56,7 +56,7 @@
             @else
                 <p><em>No pieces matched "{{ $query }}."</em></p>
             @endif
-        </div>'
+        </div>
     </div>
 
     <div class="panel panel-default">

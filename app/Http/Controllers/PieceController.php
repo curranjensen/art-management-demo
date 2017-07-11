@@ -60,7 +60,7 @@ class PieceController extends Controller
     public function store(CreatePieceRequest $request)
     {
         $piece = $this->repository->create($request->only([
-            'name', 'size', 'month', 'year', 'number'
+            'name', 'size', 'month', 'year', 'number', 'notes', 'status', 'licences'
         ]));
 
         flash('The piece has been created!', 'success');
@@ -106,7 +106,7 @@ class PieceController extends Controller
     public function update(ModifyPieceRequest $request, Piece $piece)
     {
         $this->repository->update($piece, $request->only([
-            'name', 'size', 'month', 'year'
+            'name', 'size', 'month', 'year', 'licences', 'notes', 'status'
         ]));
 
         flash('The piece has been updated!', 'success');

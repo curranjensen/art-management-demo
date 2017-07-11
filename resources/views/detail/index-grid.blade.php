@@ -19,7 +19,7 @@
                     <div class="text-center">
                         <p><a href="{{ route('pieces.show', $detail->piece->number) }}"><img class="img-thumbnail" src="{{ $detail->large }}"></a></p>
                         <p><a href="{{ route('pieces.show', $detail->piece->number) }}">{{ $detail->piece->name() }}</a></p>
-                        <p><strong>Piece ID:</strong> {{ $detail->piece->number }}</p>
+                        <p><strong>Image ID:</strong> {{ $detail->piece->number }}</p>
                         <p><strong>Detail ID:</strong> {{ $detail->id }}</p>
                         <p><strong>File Name: </strong>{{ $detail->piece->number . '/' . $detail->file_name }}</p>
                         <p><strong>Original File: </strong>{{ $detail->original_file_name }}</p>

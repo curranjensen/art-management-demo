@@ -15,7 +15,7 @@
             <p class="footer-links">
                 <a target="_blank" href="{{ config('owner.website') }}">Website</a>
                 ·
-                <a href="{{ route('pieces.index') }}">Pieces</a>
+                <a href="{{ route('pieces.index') }}">Images</a>
                 ·
                 <a href="{{ route('details.index') }}">Details</a>
                 ·
