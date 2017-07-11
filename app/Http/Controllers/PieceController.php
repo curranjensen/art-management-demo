@@ -33,11 +33,15 @@ class PieceController extends Controller
      */
     public function index(Request $request)
     {
+        $media = Medium::all();
+
         $sort = $this->getSort($request);
 
-        $pieces = $this->repository->selectForIndex($sort);
+        $medium = request('media_id', false);
 
-        return view('piece.index', compact('pieces'));
+        $pieces = $this->repository->selectForIndex($sort, $medium);
+
+        return view('piece.index', compact('media', 'pieces'));
     }
 
     /**

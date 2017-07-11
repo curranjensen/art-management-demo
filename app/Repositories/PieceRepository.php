@@ -4,7 +4,7 @@ use App\Piece;
 
 interface PieceRepository
 {
-    public function selectForIndex($sort);
+    public function selectForIndex($sort, $medium);
 
     public function getNextPieceNumber();
 

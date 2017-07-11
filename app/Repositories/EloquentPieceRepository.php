@@ -4,10 +4,13 @@ use App\Piece;
 
 class EloquentPieceRepository implements PieceRepository
 {
-    public function selectForIndex($sort)
+    public function selectForIndex($sort, $medium)
     {
         return Piece::withCount('details')
             ->with('thumbnail')
+            ->when($medium, function ($query) use ($medium) {
+                return $query->where('media_id', $medium);
+            })
             ->when($sort, function ($query) use ($sort) {
                 return $query->orderBy($sort[0], $sort[1]);
             }, function ($query) {
