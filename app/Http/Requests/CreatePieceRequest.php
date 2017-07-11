@@ -27,6 +27,7 @@ class CreatePieceRequest extends FormRequest
             'number' => 'required|numeric|unique:pieces,number',
             'year' => 'numeric',
             'month' => 'numeric|min:1|max:12',
+            'media_id' => 'integer|exists:media,id'
         ];
     }
 }
