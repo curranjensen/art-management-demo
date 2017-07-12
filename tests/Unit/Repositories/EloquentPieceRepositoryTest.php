@@ -33,7 +33,7 @@ class EloquentPieceRepositoryTest extends TestCase
             'name' => 'Second Piece'
         ]);
 
-        $result = $this->repo->selectForIndex($sort);
+        $result = $this->repo->selectForIndex($sort, $medium = false);
 
         $this->assertEquals('First Piece', $result->first()->name);
     }

@@ -21,6 +21,8 @@ class CreatePieceTest extends TestCase
     /** @test */
     public function it_can_create_a_new_piece()
     {
+
+        $this->disableExceptionHandling();
         $response = $this->post('/pieces', [
             'media_id' => 1,
             'name' => 'First Painting',
