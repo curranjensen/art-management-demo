@@ -14,7 +14,7 @@
             <th>Thumbnail</th>
             <th>File Name</th>
             <th>Detail ID</th>
-            <th>Name</th>
+            <th>Title</th>
             <th>Dimensions</th>
             <th>Image Size</th>
             <th>Completed</th>

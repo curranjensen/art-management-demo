@@ -21,8 +21,8 @@
                     <img class="img-thumbnail img-responsive" src="{{ $piece->thumbnail->absoluteLarge ?? '/img/70x50_placeholder.png'}}">
                 </td>
                 <td>
-                    <p><strong>Name: </strong>{{ $piece->name() }}</p>
-                    <p><strong>Piece ID: </strong>{{ $piece->number }}</p>
+                    <p><strong>Title: </strong>{{ $piece->name() }}</p>
+                    <p><strong>Image ID: </strong>{{ $piece->number }}</p>
                     <p><strong>Size: </strong>{{ $piece->size }}</p>
                     <p><strong>Completed: </strong>{{ $piece->completed() }}</p>
                 </td>

@@ -1,18 +1,18 @@
 @extends('layouts.export.blank')
-@section('title', 'Pieces')
+@section('title', 'Images')
 @section('content')
     <div class='page-header'>
         <div class="clearfix">
-            <h3 class="pull-right">Pieces ({{$pieces->count()}})</h3>
+            <h3 class="pull-right">Images ({{$pieces->count()}})</h3>
             <h3 class="pull-left">{{ config('owner.company') }} - {{ \Carbon\Carbon::now()->format('F j, Y') }}</h3>
         </div>
     </div>
     <table class="table table-striped table-condensed">
         <thead>
             <tr>
-                <th>Piece ID</th>
+                <th>Image ID</th>
                 <th>Thumbnail</th>
-                <th>Name</th>
+                <th>Title</th>
                 <th>Details</th>
                 <th>Dimensions</th>
                 <th>Completed</th>

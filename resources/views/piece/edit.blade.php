@@ -67,7 +67,21 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Month</label>
                     <div class="col-sm-10">
-                        <input value="{{ old('month') ?? $piece->month }}"  name="month" type="text" class="form-control" placeholder="Month">
+                        <select name="month" class="form-control">
+                            <option value="">Please select...</option>
+                            <option {{ isset($piece->month) && $piece->month === 1 ? 'selected' : '' }} value="1">Janaury (1)</option>
+                            <option {{ isset($piece->month) && $piece->month === 2 ? 'selected' : '' }} value="2">February (2)</option>
+                            <option {{ isset($piece->month) && $piece->month === 3 ? 'selected' : '' }} value="3">March (3)</option>
+                            <option {{ isset($piece->month) && $piece->month === 4 ? 'selected' : '' }} value="4">April (4)</option>
+                            <option {{ isset($piece->month) && $piece->month === 5 ? 'selected' : '' }} value="5">May (5)</option>
+                            <option {{ isset($piece->month) && $piece->month === 6 ? 'selected' : '' }} value="6">June (6)</option>
+                            <option {{ isset($piece->month) && $piece->month === 7 ? 'selected' : '' }} value="7">July (7)</option>
+                            <option {{ isset($piece->month) && $piece->month === 8 ? 'selected' : '' }} value="8">August (8)</option>
+                            <option {{ isset($piece->month) && $piece->month === 9 ? 'selected' : '' }} value="9">September (9)</option>
+                            <option {{ isset($piece->month) && $piece->month === 10 ? 'selected' : '' }} value="10">October (10)</option>
+                            <option {{ isset($piece->month) && $piece->month === 11 ? 'selected' : '' }} value="11">November (11)</option>
+                            <option {{ isset($piece->month) && $piece->month === 12 ? 'selected' : '' }} value="12">December (12)</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group">
@@ -85,13 +99,13 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Licences</label>
                     <div class="col-sm-10">
-                        <textarea name="licences" class="form-control">{{ old('licences') ?? $piece->licences }}</textarea>
+                        <textarea placeholder="Licences" name="licences" class="form-control">{{ old('licences') ?? $piece->licences }}</textarea>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Notes</label>
                     <div class="col-sm-10">
-                        <textarea name="notes" class="form-control">{{ old('notes') ?? $piece->notes }}</textarea>
+                        <textarea placeholder="Notes" name="notes" class="form-control">{{ old('notes') ?? $piece->notes }}</textarea>
                     </div>
                 </div>
                 <div class="form-group">

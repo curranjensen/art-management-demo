@@ -10,13 +10,13 @@
             <a href="{{ route('details.index') }}" class='btn btn-success'><span class="glyphicon glyphicon-list" aria-hidden="true"></span> All Details </a>
             <div class="dropdown btn-group">
                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Medium
+                    {{ Request::exists('media_id') ? ucwords(get_medium_dropdown()) : 'Medium' }}
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a href="/pieces">all images</a></li>
+                    <li><a href="/pieces">All Images</a></li>
                    @foreach($media as $medium)
-                        <li><a href="/pieces?{{ query_except('media_id', $medium->id) }}">{{ $medium->type }}</a></li>
+                        <li><a href="/pieces?{{ query_except('media_id', $medium->id) }}">{{ ucwords($medium->type) }}</a></li>
                     @endforeach
                 </ul>
             </div>

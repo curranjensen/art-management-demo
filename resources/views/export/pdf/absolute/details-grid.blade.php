@@ -21,7 +21,7 @@
                         <img class="img-thumbnail img-responsive" src="{{ $detail->absoluteLarge }}">
                     </td>
                     <td>
-                        <p><strong>Name: </strong>{{ $detail->piece->name() }}</p>
+                        <p><strong>Title: </strong>{{ $detail->piece->name() }}</p>
                         <p><strong>Image ID: </strong>{{ $detail->piece->number }}</p>
                         <p><strong>Detail ID: </strong>{{ $detail->id }}</p>
                         <p><strong>File Name: </strong>{{ $detail->piece->number . '/' . $detail->file_name }}</p>
