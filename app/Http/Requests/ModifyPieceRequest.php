@@ -26,9 +26,9 @@ class ModifyPieceRequest extends FormRequest
     public function rules()
     {
         return [
-            'year' => 'numeric',
-            'month' => 'numeric|min:1|max:12',
-            'media_id' => 'integer'
+            'year' => 'nullable|numeric',
+            'month' => 'nullable|numeric|min:1|max:12',
+            'media_id' => 'nullable|integer'
         ];
     }
 }

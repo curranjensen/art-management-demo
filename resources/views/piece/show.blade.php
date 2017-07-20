@@ -7,14 +7,14 @@
     @endcomponent
     <div class="page-header">
         <div class='btn-toolbar pull-right'>
-            <a href="{{ route('pieces.edit', $piece->number) }}" class='btn btn-primary'><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit Piece</a>
+            <a href="{{ route('pieces.edit', $piece->number) }}" class='btn btn-primary'><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit Image</a>
             @if($previous)
-                <a href="{{ route('pieces.show', $previous->number) }}" class='btn btn-default'><span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span> Previous Piece</a>
+                <a href="{{ route('pieces.show', $previous->number) }}" class='btn btn-default'><span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span> Previous Image</a>
             @endif
             @if($next)
-                <a href="{{ route('pieces.show', $next->number) }}" class='btn btn-default'>Next Piece <span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span></a>
+                <a href="{{ route('pieces.show', $next->number) }}" class='btn btn-default'>Next Image <span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span></a>
             @endif
-            &nbsp;<a href="{{ route('pieces.index') }}" class='btn btn-success'><span class="glyphicon glyphicon-list" aria-hidden="true"></span> All Pieces</a>
+            &nbsp;<a href="{{ route('pieces.index') }}" class='btn btn-success'><span class="glyphicon glyphicon-list" aria-hidden="true"></span> All Images</a>
         </div>
         <h3>{{ $piece->number }} - {{ $piece->name or '[No title yet]' }} </h3>
         <hr>
