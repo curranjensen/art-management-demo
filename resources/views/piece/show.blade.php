@@ -2,8 +2,8 @@
 @section('title', $piece->name ?? 'Piece')
 @section('content')
     @component('components.breadcrumbs')
-        <li><a href="{{ route('pieces.index') }}">Pieces</a></li>
-        <li class="active">{{ $piece->name ?? 'Piece' }}</li>
+        <li><a href="{{ route('pieces.index') }}">Images</a></li>
+        <li class="active">{{ $piece->name ?? 'Image' }}</li>
     @endcomponent
     <div class="page-header">
         <div class='btn-toolbar pull-right'>
@@ -24,9 +24,12 @@
             </div>
             <div class="panel-body">
                 <table class="table table-striped table-bordered table-condensed table-hover">
-                    <tr><td><strong>Piece ID: </strong></td><td>{{ $piece->number }}</td></tr>
+                    <tr><td><strong>Image ID: </strong></td><td>{{ $piece->number }}</td></tr>
                     <tr><td><strong>Dimensions: </strong></td><td>{{ $piece->size() }}</td></tr>
                     <tr><td><strong>Completed: </strong></td><td>{{ $piece->completed() }}</td></tr>
+                    <tr><td><strong>Status: </strong></td><td>{{ $piece->status() }}</td></tr>
+                    <tr><td><strong>Licences: </strong></td><td>{!! $piece->licences() !!}</td></tr>
+                    <tr><td><strong>Notes: </strong></td><td>{!! $piece->notes() !!}</td></tr>
                 </table>
             </div>
         </div>

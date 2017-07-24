@@ -42,6 +42,36 @@ class PieceTest extends TestCase
     }
 
     /** @test */
+    public function can_get_status()
+    {
+        $piece = factory(Piece::class)->make([
+            'status' => 'in studio'
+        ]);
+
+        $this->assertEquals('in studio', $piece->status());
+    }
+
+    /** @test */
+    public function can_get_licenses()
+    {
+        $piece = factory(Piece::class)->make([
+            'licences' => 'in studio'
+        ]);
+
+        $this->assertEquals('in studio', $piece->licences());
+    }
+
+    /** @test */
+    public function can_get_notes()
+    {
+        $piece = factory(Piece::class)->make([
+            'notes' => 'first painting'
+        ]);
+
+        $this->assertEquals('first painting', $piece->notes());
+    }
+
+    /** @test */
     public function can_get_completed()
     {
         $piece = factory(Piece::class)->make([

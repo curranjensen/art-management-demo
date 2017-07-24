@@ -75,6 +75,30 @@ class Piece extends Model
     }
 
     /**
+     * @return mixed|string
+     */
+    public function notes()
+    {
+        return $this->notes ? nl2br($this->notes) : 'n/a';
+    }
+
+    /**
+     * @return mixed|string
+     */
+    public function licences()
+    {
+        return $this->licences ? nl2br($this->licences) : 'n/a';
+    }
+
+    /**
+     * @return mixed|string
+     */
+    public function status()
+    {
+        return $this->status ?? 'n/a';
+    }
+
+    /**
      * @return mixed
      */
     public function thumbnail()

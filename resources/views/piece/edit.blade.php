@@ -21,8 +21,6 @@
         <h3>Edit Image: {{ $piece->name() }}</h3>
     </div>
 
-    <uploader url="{{ route('pieces.details.store', $piece->number) }}" token="{{ csrf_token() }}"></uploader>
-
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">Edit Image: {{ $piece->name or '' }}</h3>
@@ -118,6 +116,7 @@
             </form>
         </div>
     </div>
+    <uploader url="{{ route('pieces.details.store', $piece->number) }}" token="{{ csrf_token() }}"></uploader>
 
     <div class="panel panel-default">
         <div class="panel-heading">
