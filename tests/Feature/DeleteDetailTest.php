@@ -28,6 +28,7 @@ class DeleteDetailTest extends TestCase
         $response = $this->delete("/details/{$detail->id}");
 
         $response->assertStatus(302);
+        $response->assertRedirect("/pieces/{$detail->piece->number}/edit");
 
         $detail = Detail::find($detail->id);
 

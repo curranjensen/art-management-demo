@@ -2,10 +2,11 @@
 
 namespace App\Console;
 
-use App\Console\Commands\BatchWatermarkImages;
-use App\Console\Commands\ImportExcelFile;
 use App\Console\Commands\ScanDisk;
+use App\Console\Commands\ImportExcelFile;
 use Illuminate\Console\Scheduling\Schedule;
+use App\Console\Commands\BatchImageFilesize;
+use App\Console\Commands\BatchWatermarkImages;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
@@ -17,7 +18,8 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         ImportExcelFile::class,
-        BatchWatermarkImages::class
+        BatchWatermarkImages::class,
+        BatchImageFilesize::class
     ];
 
     /**

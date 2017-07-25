@@ -9,12 +9,13 @@ class Thumbnail
         $image = Image::make($src);
         $width = $image->width();
         $height = $image->height();
+        $filesize = $image->filesize();
 
         $image->fit(350, 200)
             ->save($large)
             ->fit(70, 50)
             ->save($thumbnail);
 
-        return new FileObject($width, $height);
+        return new FileObject($width, $height, $filesize);
     }
 }

@@ -40,12 +40,62 @@ class WatermarkedImage
             str_slug($detail->piece->name()),
             $detail->file_name);
 
-        $img->fit(400, 300)
-            ->text($text, 5, 295, function ($font) {
+        $width = 1024;
+        $height = 768;
+        $transparency  = 0.3;
+        $fontSize = 30;
+
+        /*
+        $img->fit($width, $height)
+            ->text($text,  (int) $width * (1/4), (int) $height/2, function ($font) use ($fontSize, $transparency) {
                 $font->file(storage_path('font/segoepr.ttf'));
-                $font->size(12);
-                $font->color('#FFFFFF');
+                $font->size($fontSize);
+                $font->color([255, 255, 255, $transparency]);
+                $font->align('center');
+                $font->valign('center');
+                $font->angle(45);
+            })->text($text, (int) $width * (1/2), (int) $height/2, function ($font) use ($fontSize, $transparency) {
+                $font->file(storage_path('font/segoepr.ttf'));
+                $font->size($fontSize);
+                $font->color([255, 255, 255, $transparency]);
+                $font->align('center');
+                $font->valign('center');
+                $font->angle(45);
+            })->text($text, (int) $width * (3/4), (int) $height/2, function ($font) use ($fontSize, $transparency) {
+                $font->file(storage_path('font/segoepr.ttf'));
+                $font->size($fontSize);
+                $font->color([255, 255, 255, $transparency]);
+                $font->align('center');
+                $font->valign('center');
+                $font->angle(45);
             })->save($fileName);
+*/
+
+        $img->fit($width, $height)
+            ->text($text,  (int) $width * (1/4), (int) $height/2, function ($font) use ($fontSize, $transparency) {
+                $font->file(storage_path('font/segoepr.ttf'));
+                $font->size($fontSize);
+                $font->color([255, 255, 255, $transparency]);
+                $font->align('center');
+                $font->valign('center');
+                $font->angle(45);
+            })->text($text, (int) $width * (3/4), (int) $height/2, function ($font) use ($fontSize, $transparency) {
+                $font->file(storage_path('font/segoepr.ttf'));
+                $font->size($fontSize);
+                $font->color([255, 255, 255, $transparency]);
+                $font->align('center');
+                $font->valign('center');
+                $font->angle(45);
+            })->save($fileName);
+
+
+
+
+
+
+
+
+
     }
 
     /**

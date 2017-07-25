@@ -51,7 +51,7 @@ class PhotoUploaderTest extends TestCase
         ->with('',
             storage_path("app/public/details/{$piece->number}/lg_test.jpg"),
             storage_path("app/public/details/{$piece->number}/th_test.jpg"))
-            ->andReturn(new FileObject(800, 600));
+            ->andReturn(new FileObject(800, 600, 1024));
 
         (new PhotoUploader($piece, $file, $namer, $thumbnail))->save();
 

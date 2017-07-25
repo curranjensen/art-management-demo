@@ -4,16 +4,18 @@ class FileObject
 {
     private $originalWidth;
     private $originalHeight;
+    private $filesize;
 
     /**
      * FileObject constructor.
      * @param $originalWidth
      * @param $originalHeight
      */
-    public function __construct($originalWidth, $originalHeight)
+    public function __construct($originalWidth, $originalHeight, $filesize)
     {
         $this->originalWidth = $originalWidth;
         $this->originalHeight = $originalHeight;
+        $this->filesize = $filesize;
     }
 
     public function originalWidth()
@@ -24,5 +26,10 @@ class FileObject
     public function originalHeight()
     {
         return $this->originalHeight;
+    }
+
+    public function filesize()
+    {
+        return $this->filesize;
     }
 }

@@ -7,7 +7,7 @@
     <div class='page-header'>
         <div class='btn-toolbar pull-right'>
             <a href="{{ route('details.index') }}" class='btn btn-success'><span class="glyphicon glyphicon-list" aria-hidden="true"></span> All Details - List View</a>
-            <a href="{{ route('pieces.index') }}" class='btn btn-success'><span class="glyphicon glyphicon-list" aria-hidden="true"></span> All Pieces </a>
+            <a href="{{ route('pieces.index') }}" class='btn btn-success'><span class="glyphicon glyphicon-list" aria-hidden="true"></span> All Images </a>
         </div>
         <h3>Details ({{$details->total()}})</h3>
     </div>
@@ -23,7 +23,8 @@
                         <p><strong>Detail ID:</strong> {{ $detail->id }}</p>
                         <p><strong>File Name: </strong>{{ $detail->piece->number . '/' . $detail->file_name }}</p>
                         <p><strong>Original File: </strong>{{ $detail->original_file_name }}</p>
-                        <p><strong>Image Size:</strong> {{ $detail->width . ' x ' . $detail->height }}</p>
+                        <p><strong>Image Dimensions:</strong> {{ $detail->width . ' x ' . $detail->height }}</p>
+                        <p><strong>Image Size:</strong> {{ $detail->filesize() }} MB</p>
                         <p><strong>Completed:</strong> {{ $detail->piece->completed() }}</p>
                         <p><a class="btn btn-sm btn-primary" href="{{ route('pieces.edit', $detail->piece->number) }}"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</a></p>
                     </div>

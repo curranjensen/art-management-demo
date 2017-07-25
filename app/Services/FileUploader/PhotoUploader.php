@@ -28,6 +28,7 @@ class PhotoUploader extends Uploader
             'file_name' => $file_name,
             'width' => $fileObject->originalWidth(),
             'height' => $fileObject->originalHeight(),
+            'filesize' => $fileObject->filesize(),
             'original_file_name' => $this->file->getClientOriginalName(),
             'exif' => $exif
         ]);

@@ -7,7 +7,7 @@
     <div class='page-header'>
         <div class='btn-toolbar pull-right'>
             <a href="{{ route('details.index', ['grid']) }}" class='btn btn-success'><span class="glyphicon glyphicon-th" aria-hidden="true"></span> All Details - Grid View</a>
-            <a href="{{ route('pieces.index') }}" class='btn btn-success'><span class="glyphicon glyphicon-list" aria-hidden="true"></span> All Pieces </a>
+            <a href="{{ route('pieces.index') }}" class='btn btn-success'><span class="glyphicon glyphicon-list" aria-hidden="true"></span> All Images</a>
         </div>
         <h3>Details ({{$details->total()}})</h3>
     </div>
@@ -21,6 +21,7 @@
                 <th>Name <a href="?sort=name-asc"><span class="glyphicon glyphicon-sort-by-attributes"></span></a> <a href="?sort=name-desc"><span class="glyphicon glyphicon-sort-by-attributes-alt"></span></a></th>
                 <th>Dimensions</th>
                 <th>Image Size</th>
+                <th>File Size</th>
                 <th>Month</th>
                 <th>Year <a href="?sort=year-asc"><span class="glyphicon glyphicon-sort-by-attributes"></span> <a href="?sort=year-desc"><span class="glyphicon glyphicon-sort-by-attributes-alt"></span></a></a></th>
                 <th>&nbsp;</th>
@@ -36,6 +37,7 @@
                     <td><a href="{{ route('pieces.show', $detail->piece->number) }}">{{ $detail->piece->name() }}</a></td>
                     <td>{{ $detail->piece->size() }}</td>
                     <td>{{ $detail->width . ' x ' . $detail->height }}</td>
+                    <td>{{ $detail->filesize() }} MB</td>
                     <td>{{ $detail->piece->month() }}</td>
                     <td>{{ $detail->piece->year() }}</td>
                     <td><a class="btn btn-sm btn-primary" href="{{ route('pieces.edit', $detail->piece->number) }}"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</a></td>

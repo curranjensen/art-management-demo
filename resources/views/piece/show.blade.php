@@ -45,7 +45,8 @@
                 @endif
                 <p><strong>Detail ID: </strong> {{ $detail->id }}</p>
                 <p><strong>File Name:</strong> {{ $piece->number . '/' . $detail->file_name }}</p>
-                <p><strong>File Size:</strong> {{ $detail->width }} x {{$detail->height}}</p>
+                <p><strong>File Dimensions:</strong> {{ $detail->width }} x {{ $detail->height }}</p>
+                <p><strong>File Size:</strong> {{ $detail->filesize() }} MB</p>
                 <p><strong>Original File:</strong> {{ $detail->original_file_name }}</p>
                 <p><a href="{{ route('details.crop', $detail->id) }}" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Download Watermarked</a>
                 <a href="{{ route('details.download-original', $detail->id) }}" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Download Original</a></p>

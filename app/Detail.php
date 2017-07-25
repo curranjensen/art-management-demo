@@ -85,4 +85,9 @@ class Detail extends Model
     {
         return $this->is_default ? 'true' : 'false';
     }
+
+    public function filesize()
+    {
+        return number_format($this->filesize / 1024 / 1024, 3);
+    }
 }

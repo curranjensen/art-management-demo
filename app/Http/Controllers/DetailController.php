@@ -72,11 +72,13 @@ class DetailController extends Controller
      */
     public function destroy(Detail $detail)
     {
+        $pieceNumber = $detail->piece->number;
+
         $this->repository->kill($detail);
 
         flash('The detail has been deleted!', 'success');
 
-        return redirect()->route('pieces.edit', $detail->piece->id);
+        return redirect()->route('pieces.edit', $pieceNumber);
     }
 
     /**
