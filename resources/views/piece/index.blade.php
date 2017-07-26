@@ -31,6 +31,7 @@
                 <th>Title <a href="/pieces?{{ query_except('sort', 'name-asc') }}"><span class="glyphicon glyphicon-sort-by-attributes"></span></a> <a href="/pieces?{{ query_except('sort', 'name-desc') }}"><span class="glyphicon glyphicon-sort-by-attributes-alt"></span></a></th>
                 <th>Details</th>
                 <th>Dimensions</th>
+                <th>Dimensions (cm)</th>
                 <th>Month</th>
                 <th>Year <a href="/pieces?{{ query_except('sort', 'year-asc') }}"><span class="glyphicon glyphicon-sort-by-attributes"></span> <a href="/pieces?{{ query_except('sort', 'year-desc') }}"><span class="glyphicon glyphicon-sort-by-attributes-alt"></span></a></a></th>
                 <th>&nbsp;</th>
@@ -43,7 +44,8 @@
                     <td><a href="{{ route('pieces.show', $piece->number) }}"><img class="img-thumbnail" src="{{ $piece->thumbnail->thumbnail ?? '/img/70x50_placeholder.png' }}"></a></td>
                     <td><a href="{{ route('pieces.show', $piece->number) }}">{{ $piece->name() }}</a></td>
                     <td>{{ $piece->details_count }}</td>
-                    <td>{{ $piece->size() }}</td>
+                    <td>{{ $piece->size() }} "</td>
+                    <td>{{ $piece->centimeters() }} cm</td>
                     <td>{{ $piece->month() }}</td>
                     <td>{{ $piece->year() }}</td>
                     <td><a class="btn btn-sm btn-primary" href="{{ route('pieces.edit', $piece->number) }}"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</a></td>

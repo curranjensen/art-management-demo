@@ -113,4 +113,13 @@ class PieceTest extends TestCase
         $this->assertNull(Detail::where('piece_id', $piece->id)->first());
     }
 
+    /** @test */
+    public function can_get_centimeters_size_from_inches()
+    {
+        $piece = factory(Piece::class)->make([
+            'size' => '1 x 1',
+        ]);
+
+        $this->assertEquals('2.54 x 2.54', $piece->centimeters());
+    }
 }

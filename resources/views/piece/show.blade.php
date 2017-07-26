@@ -26,6 +26,7 @@
                 <table class="table table-striped table-bordered table-condensed table-hover">
                     <tr><td><strong>Image ID: </strong></td><td>{{ $piece->number }}</td></tr>
                     <tr><td><strong>Dimensions: </strong></td><td>{{ $piece->size() }}</td></tr>
+                    <tr><td><strong>Dimensions (cm): </strong></td><td>{{ $piece->centimeters() }}</td></tr>
                     <tr><td><strong>Completed: </strong></td><td>{{ $piece->completed() }}</td></tr>
                     <tr><td><strong>Status: </strong></td><td>{{ $piece->status() }}</td></tr>
                     <tr><td><strong>Licences: </strong></td><td>{!! $piece->licences() !!}</td></tr>

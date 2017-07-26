@@ -132,4 +132,21 @@ class Piece extends Model
 
         return $this->month() . ' / ' . $this->year();
     }
+
+    public function centimeters()
+    {
+        if(is_null($this->size)) return 'n/a';
+
+        $regex = '/(?:\d*\.)?\d+/';
+
+        preg_match_all($regex, $this->size, $matches);
+
+        $flat = collect($matches)->flatten();
+
+        $centimeters = $flat->map(function ($match) {
+            return number_format((float) $match * 2.54, 0);
+        });
+
+        return $centimeters->implode(' x ');
+    }
 }
