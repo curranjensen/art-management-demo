@@ -5,7 +5,7 @@ use App\Piece;
 
 class EloquentDetailRepository implements DetailRepository
 {
-    public function selectForIndex($sort)
+    public function selectForIndex($sort = false)
     {
         return Detail::select('details.*')
             ->join('pieces', 'pieces.id', '=', 'details.piece_id')

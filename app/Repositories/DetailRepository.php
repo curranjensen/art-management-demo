@@ -5,7 +5,7 @@ use App\Piece;
 
 interface DetailRepository
 {
-    public function selectForIndex($sort);
+    public function selectForIndex($sort = false);
 
     public function getPrevious(Piece $piece, Detail $detail);
 

@@ -57,9 +57,9 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Dimensions</label>
+                    <label class="col-sm-2 control-label">Dimensions (inches)</label>
                     <div class="col-sm-10">
-                        <input value="{{ old('size') ?? $piece->size }}" name="size" type="text" class="form-control" placeholder="Size">
+                        <input value="{{ old('size') ?? $piece->size }}" name="size" type="text" class="form-control" placeholder="w x h">
                     </div>
                 </div>
                 <div class="form-group">

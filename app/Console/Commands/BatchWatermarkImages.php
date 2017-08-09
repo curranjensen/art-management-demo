@@ -43,7 +43,7 @@ class BatchWatermarkImages extends Command
     {
         File::cleanDirectory(storage_path('app/public/watermarked-batch/'));
 
-        $details = $detailRepository->all();
+        $details = $detailRepository->selectForIndex();
 
         $count = count($details);
 

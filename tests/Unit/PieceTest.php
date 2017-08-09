@@ -120,6 +120,16 @@ class PieceTest extends TestCase
             'size' => '1 x 1',
         ]);
 
-        $this->assertEquals('2.54 x 2.54', $piece->centimeters());
+        $this->assertEquals('3 x 3', $piece->centimeters());
+    }
+
+    /** @test */
+    public function can_get_centimeters_size_from_inches_if_only_one_dimension()
+    {
+        $piece = factory(Piece::class)->make([
+            'size' => '1',
+        ]);
+
+        $this->assertEquals('3', $piece->centimeters());
     }
 }

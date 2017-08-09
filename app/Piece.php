@@ -147,6 +147,8 @@ class Piece extends Model
             return number_format((float) $match * 2.54, 0);
         });
 
+        if($centimeters->count() === 1) return $centimeters->first();
+
         return $centimeters->implode(' x ');
     }
 }
