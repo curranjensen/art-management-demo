@@ -3,8 +3,8 @@
 namespace App\Console\Commands;
 
 use File;
+use App\Detail;
 use Illuminate\Console\Command;
-use App\Repositories\DetailRepository;
 use App\Services\ImageProcessor\ImageProcessor;
 
 class BatchWatermarkImages extends Command
@@ -35,15 +35,17 @@ class BatchWatermarkImages extends Command
     /**
      * Execute the console command.
      *
-     * @param DetailRepository $detailRepository
      * @param ImageProcessor $imageProcessor
      * @return mixed
      */
-    public function handle(DetailRepository $detailRepository, ImageProcessor $imageProcessor)
+    public function handle(ImageProcessor $imageProcessor)
     {
         File::cleanDirectory(storage_path('app/public/watermarked-batch/'));
 
-        $details = $detailRepository->selectForIndex();
+        $details = Detail::select('details.*')
+            ->join('pieces', 'pieces.id', '=', 'details.piece_id')
+            ->orderBy('pieces.number')
+            ->get();
 
         $count = count($details);
 

@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Console\Commands\DumpDatabase;
 use App\Console\Commands\ScanDisk;
 use App\Console\Commands\ImportExcelFile;
 use Illuminate\Console\Scheduling\Schedule;
@@ -19,7 +20,8 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         ImportExcelFile::class,
         BatchWatermarkImages::class,
-        BatchImageFilesize::class
+        BatchImageFilesize::class,
+        DumpDatabase::class
     ];
 
     /**

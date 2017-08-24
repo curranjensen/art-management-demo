@@ -20,6 +20,7 @@
         </div>
         <h3>Edit Image: {{ $piece->name() }}</h3>
     </div>
+    <uploader url="{{ route('pieces.details.store', $piece->number) }}" token="{{ csrf_token() }}"></uploader>
 
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -67,18 +68,18 @@
                     <div class="col-sm-10">
                         <select name="month" class="form-control">
                             <option value="">Please select...</option>
-                            <option {{ isset($piece->month) && $piece->month === 1 ? 'selected' : '' }} value="1">Janaury (1)</option>
-                            <option {{ isset($piece->month) && $piece->month === 2 ? 'selected' : '' }} value="2">February (2)</option>
-                            <option {{ isset($piece->month) && $piece->month === 3 ? 'selected' : '' }} value="3">March (3)</option>
-                            <option {{ isset($piece->month) && $piece->month === 4 ? 'selected' : '' }} value="4">April (4)</option>
-                            <option {{ isset($piece->month) && $piece->month === 5 ? 'selected' : '' }} value="5">May (5)</option>
-                            <option {{ isset($piece->month) && $piece->month === 6 ? 'selected' : '' }} value="6">June (6)</option>
-                            <option {{ isset($piece->month) && $piece->month === 7 ? 'selected' : '' }} value="7">July (7)</option>
-                            <option {{ isset($piece->month) && $piece->month === 8 ? 'selected' : '' }} value="8">August (8)</option>
-                            <option {{ isset($piece->month) && $piece->month === 9 ? 'selected' : '' }} value="9">September (9)</option>
-                            <option {{ isset($piece->month) && $piece->month === 10 ? 'selected' : '' }} value="10">October (10)</option>
-                            <option {{ isset($piece->month) && $piece->month === 11 ? 'selected' : '' }} value="11">November (11)</option>
-                            <option {{ isset($piece->month) && $piece->month === 12 ? 'selected' : '' }} value="12">December (12)</option>
+                            <option {{ (isset($piece->month) && $piece->month === 1) || (old('month') == 1) ? 'selected' : '' }} value="1">Janaury (1)</option>
+                            <option {{ (isset($piece->month) && $piece->month === 2) || (old('month') == 2) ? 'selected' : '' }} value="2">February (2)</option>
+                            <option {{ (isset($piece->month) && $piece->month === 3) || (old('month') == 3) ? 'selected' : '' }} value="3">March (3)</option>
+                            <option {{ (isset($piece->month) && $piece->month === 4) || (old('month') == 4) ? 'selected' : '' }} value="4">April (4)</option>
+                            <option {{ (isset($piece->month) && $piece->month === 5) || (old('month') == 5) ? 'selected' : '' }} value="5">May (5)</option>
+                            <option {{ (isset($piece->month) && $piece->month === 6) || (old('month') == 6) ? 'selected' : '' }} value="6">June (6)</option>
+                            <option {{ (isset($piece->month) && $piece->month === 7) || (old('month') == 7) ? 'selected' : '' }} value="7">July (7)</option>
+                            <option {{ (isset($piece->month) && $piece->month === 8) || (old('month') == 8) ? 'selected' : '' }} value="8">August (8)</option>
+                            <option {{ (isset($piece->month) && $piece->month === 9) || (old('month') == 9) ? 'selected' : '' }} value="9">September (9)</option>
+                            <option {{ (isset($piece->month) && $piece->month === 10) || (old('month') == 10) ? 'selected' : '' }} value="10">October (10)</option>
+                            <option {{ (isset($piece->month) && $piece->month === 11) || (old('month') == 11) ? 'selected' : '' }} value="11">November (11)</option>
+                            <option {{ (isset($piece->month) && $piece->month === 12) || (old('month') == 12) ? 'selected' : '' }} value="12">December (12)</option>
                         </select>
                     </div>
                 </div>
@@ -116,7 +117,6 @@
             </form>
         </div>
     </div>
-    <uploader url="{{ route('pieces.details.store', $piece->number) }}" token="{{ csrf_token() }}"></uploader>
 
     <div class="panel panel-default">
         <div class="panel-heading">

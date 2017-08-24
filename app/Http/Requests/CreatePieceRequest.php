@@ -25,7 +25,7 @@ class CreatePieceRequest extends FormRequest
     {
         return [
             'number' => 'required|numeric|unique:pieces,number',
-            'year' => 'nullable|numeric',
+            'year' => 'nullable|numeric|date_format:Y',
             'month' => 'nullable|numeric|min:1|max:12',
             'media_id' => 'nullable|integer'
         ];

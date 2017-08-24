@@ -55,18 +55,18 @@
                     <div class="col-sm-10">
                         <select name="month" class="form-control">
                             <option value="">Please select...</option>
-                            <option value="1">Janaury (1)</option>
-                            <option value="2">February (2)</option>
-                            <option value="3">March (3)</option>
-                            <option value="4">April (4)</option>
-                            <option value="5">May (5)</option>
-                            <option value="6">June (6)</option>
-                            <option value="7">July (7)</option>
-                            <option value="8">August (8)</option>
-                            <option value="9">September (9)</option>
-                            <option value="10">October (10)</option>
-                            <option value="11">November (11)</option>
-                            <option value="12">December (12)</option>
+                            <option value="1" {{ old('month') == 1 ? 'selected' : '' }}>Janaury (1)</option>
+                            <option value="2" {{ old('month') == 2 ? 'selected' : '' }}>February (2)</option>
+                            <option value="3" {{ old('month') == 3 ? 'selected' : '' }}>March (3)</option>
+                            <option value="4" {{ old('month') == 4 ? 'selected' : '' }}>April (4)</option>
+                            <option value="5" {{ old('month') == 5 ? 'selected' : '' }}>May (5)</option>
+                            <option value="6" {{ old('month') == 6 ? 'selected' : '' }}>June (6)</option>
+                            <option value="7" {{ old('month') == 7 ? 'selected' : '' }}>July (7)</option>
+                            <option value="8" {{ old('month') == 8 ? 'selected' : '' }}>August (8)</option>
+                            <option value="9" {{ old('month') == 9 ? 'selected' : '' }}>September (9)</option>
+                            <option value="10" {{ old('month') == 10 ? 'selected' : '' }}>October (10)</option>
+                            <option value="11" {{ old('month') == 11 ? 'selected' : '' }}>November (11)</option>
+                            <option value="12" {{ old('month') == 12 ? 'selected' : '' }}>December (12)</option>
                         </select>
                     </div>
                 </div>
