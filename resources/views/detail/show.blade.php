@@ -22,8 +22,11 @@
         <h3>Detail: {{ $detail->piece->name or '[No title yet]' }}</h3>
         <hr>
         <img class="img-responsive img-thumbnail" src="{{ $detail->original }}"><hr>
-        <p class="text-center"><a href="{{ route('details.crop', $detail->id) }}" class="btn btn-primary"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Download Watermarked</a>
-            <a href="{{ route('details.download-original', $detail->id) }}" class="btn btn-primary"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Download Original</a></p>
+        <p class="text-center">
+            <a href="{{ route('details.crop', $detail->id) }}" class="btn btn-primary"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Download Watermarked</a>
+            <a href="{{ route('details.download-original', $detail->id) }}" class="btn btn-primary"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Download Original</a>
+            <a href="{{ route('details.rotate', $detail->id) }}" class="btn btn-primary"><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Rotate Detail</a>
+        </p>
         <hr>
         <div class="panel panel-default">
             <div class="panel-heading">

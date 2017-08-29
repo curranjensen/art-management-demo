@@ -90,4 +90,9 @@ class Detail extends Model
     {
         return number_format($this->filesize / 1024 / 1024, 3);
     }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
 }

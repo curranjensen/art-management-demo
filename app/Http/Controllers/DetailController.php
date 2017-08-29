@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Image;
 use App\Detail;
+use App\Http\Requests\RotateDetailRequest;
 use Illuminate\Http\Request;
 use App\Http\Requests\CropRequest;
 use App\Repositories\DetailRepository;
@@ -175,6 +177,36 @@ class DetailController extends Controller
             request('x'),
             request('y'));
 
-        return response()->download($detail->watermarkedPath, str_slug($detail->piece->name() . '_watermarked'));
+        return response()->download($detail->watermarkedPath,
+            str_slug($detail->piece->name() . '_watermarked'));
+    }
+
+    public function showRotate(Detail $detail)
+    {
+        $previous = $this->repository->getPrevious($detail->piece, $detail);
+        $next = $this->repository->getNext($detail->piece, $detail);
+
+        return view('detail.rotate', compact('detail', 'previous', 'next'));
+    }
+
+    public function rotate(Detail $detail, RotateDetailRequest $request)
+    {
+        $images = collect([
+            $detail->absoluteLarge,
+            $detail->absoluteThumbnail,
+            $detail->originalPath
+        ]);
+
+        foreach ($images as $image) {
+           $image = Image::make($image)->rotate((float) $request->angle)->save();
+        }
+
+        $detail->width = $image->width();
+        $detail->height = $image->height();
+        $detail->save();
+
+        flash('The detail has been rotated!', 'success');
+
+        return redirect()->back();
     }
 }

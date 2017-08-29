@@ -24,6 +24,8 @@ Route::get('details/{detail}/download-original', 'DetailController@downloadOrigi
 Route::get('details/{detail}/download-watermarked', 'DetailController@downloadWatermarked')->name('details.download-watermarked');
 Route::get('details/{detail}/crop', 'DetailController@showCrop')->name('details.crop');
 Route::post('details/{detail}/crop', 'DetailController@cropWatermark');
+Route::get('details/{detail}/rotate', 'DetailController@showRotate')->name('details.rotate');
+Route::post('details/{detail}/rotate', 'DetailController@rotate');
 Route::post('details/{detail}/default', 'DetailController@makeDefault')->name('details.default');
 Route::delete('details/{detail}/default', 'DetailController@removeDefault');
 Route::resource('details', 'DetailController', ['except' => [
