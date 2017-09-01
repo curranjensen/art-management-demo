@@ -39,3 +39,10 @@ $factory->define(App\Piece::class, function (Faker\Generator $faker) {
         'number' => $faker->randomNumber(null, true)
     ];
 });
+
+$factory->define(App\Tag::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->word,
+        'slug' => str_slug($faker->word)
+    ];
+});

@@ -48,6 +48,15 @@
     </div>
     <div class="panel panel-default">
         <div class="panel-heading">
+            <h3 class="panel-title">Tags</h3>
+        </div>
+        <div class="panel-body">
+            <tags url="/details/{{ $detail->id }}/tags" :tags="{{ $tags }}"></tags>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
             <h3 class="panel-title">Delete Detail Image</h3>
         </div>
         <div class="panel-body">

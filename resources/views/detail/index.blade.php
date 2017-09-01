@@ -31,7 +31,7 @@
             @foreach($details as $detail)
                 <tr>
                     <td>{{ $detail->piece->number }}</td>
-                    <td><a href="{{ route('pieces.show', $detail->piece->number) }}"><img class="img-thumbnail" src="{{ $detail->thumbnail }}"></a></td>
+                    <td><a href="{{ route('details.show', $detail->id) }}"><img class="img-thumbnail" src="{{ $detail->thumbnail }}"></a></td>
                     <td>{{ $detail->piece->number . '/' . $detail->file_name }}</td>
                     <td>{{ $detail->id }}</td>
                     <td><a href="{{ route('pieces.show', $detail->piece->number) }}">{{ $detail->piece->name() }}</a></td>

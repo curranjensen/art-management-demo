@@ -12,4 +12,9 @@ class Tag extends Model
     {
         return $this->belongsToMany(Detail::class);
     }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

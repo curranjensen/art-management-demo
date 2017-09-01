@@ -17,7 +17,7 @@
             @foreach($column as $detail)
                 <div class="col-md-4">
                     <div class="text-center">
-                        <p><a href="{{ route('pieces.show', $detail->piece->number) }}"><img class="img-thumbnail" src="{{ $detail->large }}"></a></p>
+                        <p><a href="{{ route('details.show', $detail->id) }}"><img class="img-thumbnail" src="{{ $detail->large }}"></a></p>
                         <p><a href="{{ route('pieces.show', $detail->piece->number) }}">{{ $detail->piece->name() }}</a></p>
                         <p><strong>Image ID:</strong> {{ $detail->piece->number }}</p>
                         <p><strong>Detail ID:</strong> {{ $detail->id }}</p>

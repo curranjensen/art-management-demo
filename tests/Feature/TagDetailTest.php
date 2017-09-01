@@ -26,4 +26,27 @@ class TagDetailTest extends TestCase
         $this->assertContains('Christmas', $detail->tags->pluck('name'));
         $this->assertContains('christmas', $detail->tags->pluck('slug'));
     }
+
+    /** @test */
+    public function a_user_can_tag_a_detail_and_also_remove_tags()
+    {
+        $this->disableExceptionHandling();
+        $detail = factory(Detail::class)->create();
+
+        $response = $this->patchJson("details/{$detail->id}/tags", [
+            'tags' => ['one', 'two', 'three']
+        ]);
+
+        $response->assertStatus(200);
+
+        $this->assertCount(3, $detail->fresh()->tags);
+
+        $response = $this->patchJson("details/{$detail->id}/tags", [
+            'tags' => []
+        ]);
+
+        $response->assertStatus(200);
+
+        $this->assertCount(0, $detail->fresh()->tags);
+    }
 }

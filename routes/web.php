@@ -26,11 +26,15 @@ Route::get('details/{detail}/crop', 'DetailController@showCrop')->name('details.
 Route::post('details/{detail}/crop', 'DetailController@cropWatermark');
 Route::get('details/{detail}/rotate', 'DetailController@showRotate')->name('details.rotate');
 Route::post('details/{detail}/rotate', 'DetailController@rotate');
+Route::patch('details/{detail}/tags', 'DetailTagController@update');
 Route::post('details/{detail}/default', 'DetailController@makeDefault')->name('details.default');
 Route::delete('details/{detail}/default', 'DetailController@removeDefault');
 Route::resource('details', 'DetailController', ['except' => [
     'create', 'store', 'edit', 'update'
 ]]);
+
+Route::get('api/tags', 'TagController@ajaxIndex');
+Route::resource('tags', 'TagController');
 
 Route::get('export', 'ExportController@index')->name('export.index');
 

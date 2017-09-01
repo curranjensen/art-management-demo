@@ -52,7 +52,9 @@ class DetailController extends Controller
         $previous = $this->repository->getPrevious($detail->piece, $detail);
         $next = $this->repository->getNext($detail->piece, $detail);
 
-        return view('detail.show', compact('detail', 'previous', 'next'));
+        $tags = $detail->tags->pluck('name');
+
+        return view('detail.show', compact('detail', 'previous', 'next', 'tags'));
     }
 
     /**
