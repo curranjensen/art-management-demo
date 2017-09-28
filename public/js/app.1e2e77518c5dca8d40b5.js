@@ -32264,6 +32264,7 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('multiselect', {
     attrs: {
+      "hide-selected": true,
       "tag-placeholder": "Add this as new tag",
       "taggable": true,
       "id": "ajax",
@@ -32273,9 +32274,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "multiple": true,
       "searchable": true,
       "loading": _vm.isLoading,
-      "internal-search": false,
+      "internal-search": true,
       "clear-on-select": false,
-      "close-on-select": false,
+      "close-on-select": true,
       "options-limit": 300,
       "limit": 3,
       "limit-text": _vm.limitText,

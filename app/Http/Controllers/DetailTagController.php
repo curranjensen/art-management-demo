@@ -73,7 +73,7 @@ class DetailTagController extends Controller
         $tags = collect(request('tags'));
 
         if(! count($tags)) {
-            $detail->tags()->sync([]);
+            $detail->tags()->detach();
             return response('Tags saved');
         }
 

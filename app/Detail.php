@@ -64,6 +64,8 @@ class Detail extends Model
 
     public function kill()
     {
+        $this->tags()->detach();
+
         if( ! app()->environment('testing')) {
             if (Storage::exists("public/details/{$this->piece->number}/th_{$this->file_name}")) {
                 Storage::delete("public/details/{$this->piece->number}/th_{$this->file_name}");

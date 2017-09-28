@@ -10,6 +10,7 @@ class FileObject
      * FileObject constructor.
      * @param $originalWidth
      * @param $originalHeight
+     * @param $filesize
      */
     public function __construct($originalWidth, $originalHeight, $filesize)
     {

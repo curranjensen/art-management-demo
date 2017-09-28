@@ -3,8 +3,8 @@
 namespace App\Console\Commands;
 
 use Image;
+use App\Detail;
 use Illuminate\Console\Command;
-use App\Repositories\DetailRepository;
 
 class BatchImageFilesize extends Command
 {
@@ -20,7 +20,7 @@ class BatchImageFilesize extends Command
      *
      * @var string
      */
-    protected $description = 'Resize and watermark Detail Images';
+    protected $description = 'Update filesize on each detail';
 
     /**
      * Create a new command instance.
@@ -37,10 +37,9 @@ class BatchImageFilesize extends Command
      * @param DetailRepository $detailRepository
      * @return mixed
      */
-    public function handle(DetailRepository $detailRepository)
+    public function handle()
     {
-
-        $details = $detailRepository->all();
+        $details = Detail::where('filesize', 0)->get();
 
         $count = count($details);
 

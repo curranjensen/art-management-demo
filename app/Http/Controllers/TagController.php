@@ -14,7 +14,7 @@ class TagController extends Controller
      */
     public function index()
     {
-        $tags = Tag::withCount('details')->get();
+        $tags = Tag::withCount('details')->orderBy('name')->get();
 
         return view('tag.index', compact('tags'));
     }
@@ -65,7 +65,7 @@ class TagController extends Controller
      */
     public function show(Tag $tag)
     {
-        $details = $tag->details()->paginate(24);
+        $details = $tag->details()->orderBy('piece_id')->paginate(24);
 
         return view('tag.show', compact('tag', 'details'));
     }

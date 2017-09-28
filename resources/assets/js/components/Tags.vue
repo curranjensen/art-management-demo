@@ -1,6 +1,6 @@
 <template>
     <div>
-        <multiselect tag-placeholder="Add this as new tag" @tag="addTag" :taggable="true" v-model="value" id="ajax" placeholder="Type to search" open-direction="bottom" :options="options" :multiple="true" :searchable="true" :loading="isLoading" :internal-search="false" :clear-on-select="false" :close-on-select="false" :options-limit="300" :limit="3" :limit-text="limitText" :max-height="600" :show-no-results="false" @search-change="asyncFind">
+        <multiselect :hide-selected="true" tag-placeholder="Add this as new tag" @tag="addTag" :taggable="true" v-model="value" id="ajax" placeholder="Type to search" open-direction="bottom" :options="options" :multiple="true" :searchable="true" :loading="isLoading" :internal-search="true" :clear-on-select="false" :close-on-select="true" :options-limit="300" :limit="3" :limit-text="limitText" :max-height="600" :show-no-results="false" @search-change="asyncFind">
             <template slot="clear" scope="props">
                 <div class="multiselect__clear" v-if="value.length" @mousedown.prevent.stop="clearAll(props.search)"></div>
             </template><span slot="noResult">Oops! No elements found. Consider changing the search query.</span>

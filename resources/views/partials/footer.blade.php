@@ -19,6 +19,8 @@
                 ·
                 <a href="{{ route('details.index') }}">Details</a>
                 ·
+                <a href="{{ route('tags.index') }}">Tags</a>
+                ·
                 <a href="{{ route('export.index') }}">Export</a>
             </p>
             <p class="footer-company-name">{{ config('owner.street') }}
