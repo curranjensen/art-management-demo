@@ -89,13 +89,29 @@ class DetailTest extends TestCase
             'is_default' => true
         ]);
 
-        $this->assertEquals('true', $detail->isDefault());
+        $this->assertTrue($detail->isDefault());
 
         $detail = factory(Detail::class)->make([
             'is_default' => false
         ]);
 
-        $this->assertEquals('false', $detail->isDefault());
+        $this->assertFalse($detail->isDefault());
+    }
+
+    /** @test */
+    public function can_get_in_catalogue()
+    {
+        $detail = factory(Detail::class)->make([
+            'in_catalogue' => true
+        ]);
+
+        $this->assertTrue($detail->inCatalogue());
+
+        $detail = factory(Detail::class)->make([
+            'in_catalogue' => false
+        ]);
+
+        $this->assertFalse($detail->inCatalogue());
     }
 
     /** @test */
