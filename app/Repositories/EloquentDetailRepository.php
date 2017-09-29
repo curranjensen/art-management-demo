@@ -76,4 +76,16 @@ class EloquentDetailRepository implements DetailRepository
     {
         return Detail::all();
     }
+
+    public function addToCatalogue(Detail $detail)
+    {
+        $detail->in_catalogue = true;
+        $detail->save();
+    }
+
+    public function removeFromCatalogue(Detail $detail)
+    {
+        $detail->in_catalogue = false;
+        $detail->save();
+    }
 }

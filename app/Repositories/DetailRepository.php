@@ -24,4 +24,8 @@ interface DetailRepository
     public function search($query);
 
     public function all();
+
+    public function addToCatalogue(Detail $detail);
+
+    public function removeFromCatalogue(Detail $detail);
 }

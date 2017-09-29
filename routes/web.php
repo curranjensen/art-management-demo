@@ -29,6 +29,8 @@ Route::post('details/{detail}/rotate', 'DetailController@rotate');
 Route::patch('details/{detail}/tags', 'DetailTagController@update');
 Route::post('details/{detail}/default', 'DetailController@makeDefault')->name('details.default');
 Route::delete('details/{detail}/default', 'DetailController@removeDefault');
+Route::post('details/{detail}/in-catalogue', 'DetailController@addToCatalogue')->name('details.in-catalogue');
+Route::delete('details/{detail}/in-catalogue', 'DetailController@removeFromCatalogue');
 Route::resource('details', 'DetailController', ['except' => [
     'create', 'store', 'edit', 'update'
 ]]);

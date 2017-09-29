@@ -8,7 +8,8 @@
     @endcomponent
     <div class='page-header'>
         <div class='btn-toolbar pull-right'>
-            <default url="{{ route('details.default', $detail->id) }}" :is-default="{{ $detail->isDefault() }}"></default>
+            <catalogue url="{{ route('details.in-catalogue', $detail->id) }}" :in-catalogue="{{ $detail->inCatalogue() ? 'true' : 'false' }}"></catalogue>
+            <default url="{{ route('details.default', $detail->id) }}" :is-default="{{ $detail->isDefault() ? 'true' : 'false' }}"></default>
             <a href="{{ route('pieces.show', $detail->piece->number) }}" class='btn btn-primary'><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> View Image</a>
             <a href="{{ route('pieces.edit', $detail->piece->number) }}" class='btn btn-primary'><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit Image</a>
             @if($previous)
@@ -42,6 +43,7 @@
                     <tr><td><strong>File Dimensions:</strong></td><td>{{ $detail->width }} x {{ $detail->height }}</td></tr>
                     <tr><td><strong>File Size:</strong></td><td>{{ $detail->filesize() }} MB</td></tr>
                     <tr><td><strong>Original:</strong></td><td>{{ $detail->original_file_name }}</td></tr>
+                    <tr><td><strong>In Catalogue:</strong></td><td>{{ $detail->inCatalogue() ? 'Yes' : 'No' }}</td></tr>
                 </table>
             </div>
         </div>

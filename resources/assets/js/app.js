@@ -18,6 +18,7 @@ Vue.component('uploader', require('./components/Uploader.vue'));
 Vue.component('random', require('./components/Random.vue'));
 Vue.component('default', require('./components/Default.vue'));
 Vue.component('tags', require('./components/Tags.vue'));
+Vue.component('catalogue', require('./components/Catalogue.vue'));
 
 const app = new Vue({
     el: '#app'

@@ -51,6 +51,7 @@
                 <p><strong>Original File:</strong> {{ $detail->original_file_name }}</p>
                 <p><a href="{{ route('details.crop', $detail->id) }}" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Download Watermarked</a>
                 <a href="{{ route('details.download-original', $detail->id) }}" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Download Original</a></p>
+                <catalogue class="btn-sm" url="{{ route('details.in-catalogue', $detail->id) }}" :in-catalogue="{{ $detail->inCatalogue() ? 'true' : 'false' }}"></catalogue>
             </div>
         </div>
         <br>

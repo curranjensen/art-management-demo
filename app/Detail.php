@@ -15,6 +15,7 @@ class Detail extends Model
 
     protected $casts = [
         'is_default' => 'boolean',
+        'in_catalogue' => 'boolean'
     ];
 
     public function piece()
@@ -85,7 +86,12 @@ class Detail extends Model
 
     public function isDefault()
     {
-        return $this->is_default ? 'true' : 'false';
+        return $this->is_default;
+    }
+
+    public function inCatalogue()
+    {
+        return $this->in_catalogue;
     }
 
     public function filesize()

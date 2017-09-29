@@ -137,6 +137,28 @@ class DetailController extends Controller
     }
 
     /**
+     * @param Detail $detail
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function addToCatalogue(Detail $detail)
+    {
+        $this->repository->addToCatalogue($detail);
+
+        return response()->json(['in_catalogue' => true]);
+    }
+
+    /**
+     * @param Detail $detail
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function removeFromCatalogue(Detail $detail)
+    {
+        $this->repository->removeFromCatalogue($detail);
+
+        return response()->json(['in_catalogue' => false]);
+    }
+
+    /**
      * Download the original detail file.
      *
      * @param Detail $detail
