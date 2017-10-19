@@ -2,6 +2,8 @@
 
 namespace Tests\Feature;
 
+use App\Category;
+use App\Medium;
 use App\Piece;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
@@ -21,6 +23,9 @@ class CreatePieceTest extends TestCase
     /** @test */
     public function it_can_create_a_new_piece()
     {
+        Medium::populate();
+
+        Category::populate();
 
         $this->disableExceptionHandling();
         $response = $this->post('/pieces', [

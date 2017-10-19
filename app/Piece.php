@@ -11,6 +11,7 @@ class Piece extends Model
      * @var array
      */
     protected $fillable = [
+        'category_id',
         'media_id',
         'name',
         'size',

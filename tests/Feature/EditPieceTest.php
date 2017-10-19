@@ -2,6 +2,8 @@
 
 namespace Tests\Feature;
 
+use App\Category;
+use App\Medium;
 use App\Piece;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
@@ -40,8 +42,13 @@ class EditPieceTest extends TestCase
     /** @test */
     public function it_can_update_a_piece()
     {
+        Medium::populate();
+
+        Category::populate();
+
         $piece = factory(Piece::class)->create([
             'media_id' => 1,
+            'category_id' => 1,
             'number' => 1,
             'name' => 'First Painting',
             'size' => '30 x 30',
@@ -54,6 +61,7 @@ class EditPieceTest extends TestCase
 
         $response = $this->patch("/pieces/{$piece->number}", [
             'media_id' => 2,
+            'category_id' => 2,
             'name' => 'Updated Name',
             'size' => '40 x 40',
             'month' => 2,
@@ -67,6 +75,7 @@ class EditPieceTest extends TestCase
 
         $piece = Piece::where([
             'media_id' => 2,
+            'category_id' => 2,
             'number' => 1,
             'name' => 'Updated Name',
             'size' => '40 x 40',

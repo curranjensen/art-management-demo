@@ -28,7 +28,8 @@ class ModifyPieceRequest extends FormRequest
         return [
             'year' => 'nullable|numeric|date_format:Y',
             'month' => 'nullable|numeric|min:1|max:12',
-            'media_id' => 'nullable|integer'
+            'media_id' => 'nullable|integer|exists:media,id',
+            'category_id' => 'nullable|integer|exists:categories,id'
         ];
     }
 }

@@ -58,6 +58,21 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label class="col-sm-2 control-label">Category</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="category_id">
+                            <option value="">Please select...</option>
+                            @foreach($categories as $category)
+                                @if($category->id === $piece->category_id)
+                                    <option selected="selected" value="{{ $category->id }}">{{ $category->type }}</option>
+                                @else
+                                    <option value="{{ $category->id }}">{{ $category->type }}</option>
+                                @endif
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label class="col-sm-2 control-label">Dimensions (inches)</label>
                     <div class="col-sm-10">
                         <input value="{{ old('size') ?? $piece->size }}" name="size" type="text" class="form-control" placeholder="w x h">

@@ -45,6 +45,17 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label class="col-sm-2 control-label">Category</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="category_id">
+                            <option value="">Please select...</option>
+                            @foreach($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->type }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label class="col-sm-2 control-label">Dimensions (inches)</label>
                     <div class="col-sm-10">
                         <input value="{{ old('size') }}" name="size" type="text" class="form-control" placeholder="w x h">
