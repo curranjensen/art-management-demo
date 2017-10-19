@@ -24,7 +24,7 @@ class WatermarkedImage
             })->save($detail->watermarkedPath);
     }
 
-    public function fit(Detail $detail)
+    public function fit(Detail $detail, $path)
     {
         try {
             $img = Image::make($detail->originalPath);
@@ -35,7 +35,7 @@ class WatermarkedImage
         $text = $this->getWatermarkText($detail);
 
         $fileName = sprintf('%s%s-%s_%s',
-            storage_path('app/public/watermarked-batch/'),
+            $path,
             $detail->piece->number,
             str_slug($detail->piece->name()),
             $detail->file_name);

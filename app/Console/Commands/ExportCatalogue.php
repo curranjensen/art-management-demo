@@ -7,21 +7,21 @@ use App\Detail;
 use Illuminate\Console\Command;
 use App\Services\ImageProcessor\ImageProcessor;
 
-class BatchWatermarkImages extends Command
+class ExportCatalogue extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'batch:watermark';
+    protected $signature = 'export:catalogue';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Resize and watermark Detail Images';
+    protected $description = 'Export images to catalogue folder';
 
     /**
      * Create a new command instance.
@@ -40,10 +40,11 @@ class BatchWatermarkImages extends Command
      */
     public function handle(ImageProcessor $imageProcessor)
     {
-        File::cleanDirectory(storage_path('app/public/watermarked-batch/'));
+        File::cleanDirectory(storage_path('app/public/catalogue/'));
 
         $details = Detail::select('details.*')
             ->join('pieces', 'pieces.id', '=', 'details.piece_id')
+            ->where('in_catalogue', true)
             ->orderBy('pieces.number')
             ->get();
 
@@ -52,7 +53,7 @@ class BatchWatermarkImages extends Command
         $bar = $this->output->createProgressBar($count);
 
         foreach($details as $detail) {
-            $imageProcessor->autoSaveWatermark($detail, storage_path('app/public/watermarked-batch/'));
+            $imageProcessor->autoSaveWatermark($detail, storage_path('app/public/catalogue/'));
             $bar->advance();
         }
 

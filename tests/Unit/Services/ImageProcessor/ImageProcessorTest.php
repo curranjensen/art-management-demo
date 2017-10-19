@@ -36,8 +36,8 @@ class ImageProcessorTest extends TestCase
 
         $img->shouldReceive('fit')
             ->once()
-            ->with($detail);
+            ->with($detail, '');
 
-        (new ImageProcessor($img))->autoSaveWatermark($detail);
+        (new ImageProcessor($img))->autoSaveWatermark($detail, '');
     }
 }

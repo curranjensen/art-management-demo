@@ -18,9 +18,9 @@ class ImageProcessor
         $this->image = $image ?: new WatermarkedImage();
     }
 
-    public function autoSaveWatermark(Detail $detail)
+    public function autoSaveWatermark(Detail $detail, $path)
     {
-        $this->image->fit($detail);
+        $this->image->fit($detail, $path);
     }
 
     public function cropForWatermark(Detail $detail, $colour, $size, $width, $height, $x, $y)

@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Console\Commands\DumpDatabase;
+use App\Console\Commands\ExportCatalogue;
 use App\Console\Commands\ScanDisk;
 use App\Console\Commands\ImportExcelFile;
 use Illuminate\Console\Scheduling\Schedule;
@@ -21,7 +22,8 @@ class Kernel extends ConsoleKernel
         ImportExcelFile::class,
         BatchWatermarkImages::class,
         BatchImageFilesize::class,
-        DumpDatabase::class
+        DumpDatabase::class,
+        ExportCatalogue::class
     ];
 
     /**
