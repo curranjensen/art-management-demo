@@ -20,6 +20,7 @@
                         <li class=""><a href="{{ route('details.index', 'grid') }}"><span class="glyphicon glyphicon-th" aria-hidden="true"></span> Grid</a></li>
                     </ul>
                 </li>
+                <li class="{{ request()->is('catalogue*') ? 'active' : '' }}"><a href="{{ route('catalogue.index') }}">Catalogue</a></li>
                 <li class="{{ request()->is('tags*') ? 'active' : '' }}"><a href="{{ route('tags.index') }}">Tags</a></li>
                 <li class="{{ request()->is('export*') ? 'active' : '' }}"><a href="{{ route('export.index') }}">Export</a></li>
                 <li class="{{ request()->is('search*') ? 'active' : '' }}"><a href="#search">Search</a></li>

@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Repositories\CatalogueRepository;
 use App\Repositories\DetailRepository;
+use App\Repositories\EloquentCatalogueRepository;
 use App\Repositories\EloquentDetailRepository;
 use App\Repositories\EloquentPieceRepository;
 use App\Repositories\PieceRepository;
@@ -30,5 +32,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(DetailRepository::class, EloquentDetailRepository::class);
 
         $this->app->bind(PieceRepository::class, EloquentPieceRepository::class);
+
+        $this->app->bind(CatalogueRepository::class, EloquentCatalogueRepository::class);
     }
 }

@@ -13,6 +13,8 @@
 
 Route::get('/', 'PagesController@index');
 
+Route::get('catalogue', 'CatalogueController@index')->name('catalogue.index');
+
 Route::post('pieces/{piece}/details', 'PieceDetailController@store')->name('pieces.details.store');
 Route::get('pieces/{piece}/details', 'PieceDetailController@show')->name('pieces.details.show');
 Route::get('pieces/{piece}/confirm-delete', 'PieceController@confirmDelete')->name('pieces.confirm-delete');
