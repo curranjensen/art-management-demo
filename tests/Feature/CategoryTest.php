@@ -17,7 +17,7 @@ class CategoryTest extends TestCase
 
         $this->assertArraySubset([
             'earth',
-            'angels',
+            'angels and spirits',
             'celebration',
             'abstract',
         ], Category::all()->pluck('type'));

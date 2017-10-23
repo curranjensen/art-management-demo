@@ -14,7 +14,7 @@ class Category extends Model
     {
         $types = [
             'earth',
-            'angels',
+            'angels and spirits',
             'celebration',
             'abstract',
         ];

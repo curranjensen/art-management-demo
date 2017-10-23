@@ -55,7 +55,7 @@ class PieceController extends Controller
         $suggestedPieceNumber = $this->repository->getNextPieceNumber();
 
         $media = Medium::all();
-        $categories = Category::all();
+        $categories = Category::orderBy('type')->get();
 
         return view('piece.create', compact('suggestedPieceNumber', 'media', 'categories'));
     }
@@ -103,7 +103,7 @@ class PieceController extends Controller
         $next = $this->repository->getNext($piece);
 
         $media = Medium::all();
-        $categories = Category::all();
+        $categories = Category::orderBy('type')->get();
 
         return view('piece.edit', compact('piece', 'previous', 'next', 'media', 'categories'));
     }
