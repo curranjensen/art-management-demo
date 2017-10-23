@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Repositories\CatalogueRepository;
 use Illuminate\Http\Request;
 
@@ -23,8 +24,12 @@ class CatalogueController extends Controller
 
     public function index()
     {
-        $details = $this->repository->selectForIndex();
+        $categories = Category::orderBy('type')->get();
 
-        return view('catalogue.index', compact('details'));
+        $category = request('category_id', false);
+
+        $details = $this->repository->selectForIndex($category);
+
+        return view('catalogue.index', compact('details', 'categories'));
     }
 }

@@ -2,5 +2,5 @@
 
 interface CatalogueRepository
 {
-    public function selectForIndex();
+    public function selectForIndex($category = false);
 }

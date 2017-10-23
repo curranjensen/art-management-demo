@@ -6,6 +6,18 @@
     @endcomponent
     <div class='page-header'>
         <div class='btn-toolbar pull-right'>
+            <div class="dropdown btn-group">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    {{ Request::exists('category_id') ? ucwords(get_category_dropdown()) : 'Category' }}
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="/catalogue">All</a></li>
+                    @foreach($categories as $category)
+                        <li><a href="/catalogue?{{ query_except('category_id', $category->id) }}">{{ ucwords($category->type) }}</a></li>
+                    @endforeach
+                </ul>
+            </div>
         </div>
         <h3>Catalogue ({{$details->total()}})</h3>
     </div>
