@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CropOriginalRequest;
+use App\Services\ImageProcessor\Cropper;
 use Image;
 use App\Detail;
 use App\Http\Requests\RotateDetailRequest;
@@ -184,6 +186,21 @@ class DetailController extends Controller
     }
 
     /**
+     * Display the form for cropping the detail
+     *
+     * @param Detail $detail
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function showCropOriginal(Detail $detail)
+    {
+        $previous = $this->repository->getPrevious($detail->piece, $detail);
+        $next = $this->repository->getNext($detail->piece, $detail);
+
+        return view('detail.crop-original', compact('detail', 'previous', 'next'));
+    }
+
+
+    /**
      * Perform the cropping of the detail and download it
      *
      * @param CropRequest $cropRequest
@@ -203,6 +220,26 @@ class DetailController extends Controller
 
         return response()->download($detail->watermarkedPath,
             str_slug($detail->piece->name() . '_watermarked'));
+    }
+
+    /**
+     * Perform the cropping of the detail and download it
+     *
+     * @param CropOriginalRequest $cropRequest
+     * @param Cropper $cropper
+     * @param Detail $detail
+     * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
+     * @internal param ImageProcessor $imageProcessor
+     */
+    public function cropOriginal(CropOriginalRequest $cropRequest, Cropper $cropper, Detail $detail)
+    {
+        $cropper->crop($detail,
+            request('width'),
+            request('height'),
+            request('x'),
+            request('y'));
+
+        return redirect()->back();
     }
 
     public function showRotate(Detail $detail)

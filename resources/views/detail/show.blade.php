@@ -27,6 +27,7 @@
             <a href="{{ route('details.crop', $detail->id) }}" class="btn btn-primary"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Download Watermarked</a>
             <a href="{{ route('details.download-original', $detail->id) }}" class="btn btn-primary"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Download Original</a>
             <a href="{{ route('details.rotate', $detail->id) }}" class="btn btn-primary"><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Rotate Detail</a>
+            <a href="{{ route('details.crop-original', $detail->id) }}" class="btn btn-primary"><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Crop Detail</a>
         </p>
         <hr>
         <div class="panel panel-default">

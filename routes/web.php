@@ -26,6 +26,8 @@ Route::get('details/{detail}/download-original', 'DetailController@downloadOrigi
 Route::get('details/{detail}/download-watermarked', 'DetailController@downloadWatermarked')->name('details.download-watermarked');
 Route::get('details/{detail}/crop', 'DetailController@showCrop')->name('details.crop');
 Route::post('details/{detail}/crop', 'DetailController@cropWatermark');
+Route::get('details/{detail}/crop-original', 'DetailController@showCropOriginal')->name('details.crop-original');
+Route::post('details/{detail}/crop-original', 'DetailController@cropOriginal');
 Route::get('details/{detail}/rotate', 'DetailController@showRotate')->name('details.rotate');
 Route::post('details/{detail}/rotate', 'DetailController@rotate');
 Route::patch('details/{detail}/tags', 'DetailTagController@update');
