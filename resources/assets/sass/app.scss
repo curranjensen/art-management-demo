@@ -12,6 +12,8 @@
 $fa-font-path: "../../../node_modules/font-awesome/fonts" !default;
 @import "node_modules/font-awesome/scss/font-awesome.scss";
 
+@import "node_modules/cropperjs/dist/cropper";
+
 .table > tbody > tr > td {
   vertical-align: middle;
 }

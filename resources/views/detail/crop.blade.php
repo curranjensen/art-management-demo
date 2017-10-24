@@ -1,8 +1,5 @@
 @extends('layouts.main')
 @section('title', 'Watermark')
-@section('head')
-<link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/0.8.1/cropper.min.css" rel="stylesheet" type="text/css">
-@endsection
 @section('content')
     @component('components.breadcrumbs')
         <li><a class="active" href="{{ route('pieces.index') }}">Images</a></li>
@@ -62,8 +59,4 @@
             </form>
         </div>
     </div>
-@endsection
-
-@section('script')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/0.8.1/cropper.min.js"></script>
 @endsection
