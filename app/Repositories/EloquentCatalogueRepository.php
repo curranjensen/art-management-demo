@@ -12,6 +12,7 @@ class EloquentCatalogueRepository implements CatalogueRepository
                 ->when($category, function ($query) use ($category) {
                     return $query->where('category_id', $category);
                 })
+                ->orderBy('pieces.number')
                 ->paginate(24);
     }
 }

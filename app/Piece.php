@@ -41,6 +41,11 @@ class Piece extends Model
         return $this->hasMany(Detail::class)->orderBy('is_default', 'DESC');
     }
 
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
     /**
      * @return bool|string
      */

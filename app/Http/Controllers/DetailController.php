@@ -239,6 +239,8 @@ class DetailController extends Controller
             request('x'),
             request('y'));
 
+        flash('The detail has been cropped!', 'success');
+
         return redirect()->back();
     }
 

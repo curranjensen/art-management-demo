@@ -37,7 +37,7 @@
                 <input type="hidden" name="y" id="y">
                 <div class="form-group">
                     <div class="col-sm-offset-1 col-sm-10">
-                        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Crop Image</button>
+                        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span> Crop Image</button>
                     </div>
                 </div>
                 @include('errors.errors')

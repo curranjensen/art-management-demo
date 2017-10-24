@@ -45,6 +45,7 @@
                     <tr><td><strong>File Size:</strong></td><td>{{ $detail->filesize() }} MB</td></tr>
                     <tr><td><strong>Original:</strong></td><td>{{ $detail->original_file_name }}</td></tr>
                     <tr><td><strong>In Catalogue:</strong></td><td>{{ $detail->inCatalogue() ? 'Yes' : 'No' }}</td></tr>
+                    <tr><td><strong>Category:</strong></td><td>{{ isset($detail->piece->category->type) ? $detail->piece->category->type : 'n/a' }}</td></tr>
                 </table>
             </div>
         </div>
