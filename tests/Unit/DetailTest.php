@@ -115,6 +115,22 @@ class DetailTest extends TestCase
     }
 
     /** @test */
+    public function can_get_is_featured()
+    {
+        $detail = factory(Detail::class)->make([
+            'is_featured' => true
+        ]);
+
+        $this->assertTrue($detail->isFeatured());
+
+        $detail = factory(Detail::class)->make([
+            'is_featured' => false
+        ]);
+
+        $this->assertFalse($detail->isFeatured());
+    }
+
+    /** @test */
     public function can_delete_itself_and_images()
     {
         $piece = factory(Piece::class)->create([

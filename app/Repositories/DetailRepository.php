@@ -28,4 +28,8 @@ interface DetailRepository
     public function addToCatalogue(Detail $detail);
 
     public function removeFromCatalogue(Detail $detail);
+
+    public function addToFeatured(Detail $detail);
+
+    public function removeFromFeatured(Detail $detail);
 }

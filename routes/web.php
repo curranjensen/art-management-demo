@@ -35,6 +35,8 @@ Route::post('details/{detail}/default', 'DetailController@makeDefault')->name('d
 Route::delete('details/{detail}/default', 'DetailController@removeDefault');
 Route::post('details/{detail}/in-catalogue', 'DetailController@addToCatalogue')->name('details.in-catalogue');
 Route::delete('details/{detail}/in-catalogue', 'DetailController@removeFromCatalogue');
+Route::post('details/{detail}/is-featured', 'DetailController@addToFeatured')->name('details.is-featured');
+Route::delete('details/{detail}/is-featured', 'DetailController@removeFromFeatured');
 Route::resource('details', 'DetailController', ['except' => [
     'create', 'store', 'edit', 'update'
 ]]);

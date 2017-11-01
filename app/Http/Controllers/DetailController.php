@@ -161,6 +161,28 @@ class DetailController extends Controller
     }
 
     /**
+     * @param Detail $detail
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function addToFeatured(Detail $detail)
+    {
+        $this->repository->addToFeatured($detail);
+
+        return response()->json(['is_featured' => true]);
+    }
+
+    /**
+     * @param Detail $detail
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function removeFromFeatured(Detail $detail)
+    {
+        $this->repository->removeFromFeatured($detail);
+
+        return response()->json(['is_featured' => false]);
+    }
+
+    /**
      * Download the original detail file.
      *
      * @param Detail $detail

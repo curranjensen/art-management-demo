@@ -36,7 +36,8 @@
                         <p><strong>Image Dimensions:</strong> {{ $detail->width . ' x ' . $detail->height }}</p>
                         <p><strong>Image Size:</strong> {{ $detail->filesize() }} MB</p>
                         <p><strong>Completed:</strong> {{ $detail->piece->completed() }}</p>
-                        <p><catalogue class="btn-sm" url="{{ route('details.in-catalogue', $detail->id) }}" :in-catalogue="{{ $detail->inCatalogue() ? 'true' : 'false' }}"></catalogue>
+                        <p><featured class="btn-sm" url="{{ route('details.is-featured', $detail->id) }}" :is-featured="{{ $detail->isFeatured() ? 'true' : 'false' }}"></featured>
+                            <catalogue class="btn-sm" url="{{ route('details.in-catalogue', $detail->id) }}" :in-catalogue="{{ $detail->inCatalogue() ? 'true' : 'false' }}"></catalogue>
                             <a class="btn btn-sm btn-primary" href="{{ route('pieces.edit', $detail->piece->number) }}"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</a></p>
                     </div>
                 </div>

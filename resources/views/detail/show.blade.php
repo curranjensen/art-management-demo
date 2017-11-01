@@ -8,8 +8,6 @@
     @endcomponent
     <div class='page-header'>
         <div class='btn-toolbar pull-right'>
-            <catalogue url="{{ route('details.in-catalogue', $detail->id) }}" :in-catalogue="{{ $detail->inCatalogue() ? 'true' : 'false' }}"></catalogue>
-            <default url="{{ route('details.default', $detail->id) }}" :is-default="{{ $detail->isDefault() ? 'true' : 'false' }}"></default>
             <a href="{{ route('pieces.show', $detail->piece->number) }}" class='btn btn-primary'><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> View Image</a>
             <a href="{{ route('pieces.edit', $detail->piece->number) }}" class='btn btn-primary'><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit Image</a>
             @if($previous)
@@ -24,6 +22,9 @@
         <hr>
         <img class="img-responsive img-thumbnail" src="{{ $detail->original }}"><hr>
         <p class="text-center">
+            <catalogue url="{{ route('details.in-catalogue', $detail->id) }}" :in-catalogue="{{ $detail->inCatalogue() ? 'true' : 'false' }}"></catalogue>
+            <featured url="{{ route('details.is-featured', $detail->id) }}" :is-featured="{{ $detail->isFeatured() ? 'true' : 'false' }}"></featured>
+            <default url="{{ route('details.default', $detail->id) }}" :is-default="{{ $detail->isDefault() ? 'true' : 'false' }}"></default>
             <a href="{{ route('details.crop', $detail->id) }}" class="btn btn-primary"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Download Watermarked</a>
             <a href="{{ route('details.download-original', $detail->id) }}" class="btn btn-primary"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Download Original</a>
             <a href="{{ route('details.rotate', $detail->id) }}" class="btn btn-primary"><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Rotate Detail</a>

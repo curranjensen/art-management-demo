@@ -15,7 +15,8 @@ class Detail extends Model
 
     protected $casts = [
         'is_default' => 'boolean',
-        'in_catalogue' => 'boolean'
+        'in_catalogue' => 'boolean',
+        'is_featured' => 'boolean'
     ];
 
     public function piece()
@@ -92,6 +93,11 @@ class Detail extends Model
     public function inCatalogue()
     {
         return $this->in_catalogue;
+    }
+
+    public function isFeatured()
+    {
+        return $this->is_featured;
     }
 
     public function filesize()

@@ -88,4 +88,16 @@ class EloquentDetailRepository implements DetailRepository
         $detail->in_catalogue = false;
         $detail->save();
     }
+
+    public function addToFeatured(Detail $detail)
+    {
+        $detail->is_featured = true;
+        $detail->save();
+    }
+
+    public function removeFromFeatured(Detail $detail)
+    {
+        $detail->is_featured = false;
+        $detail->save();
+    }
 }
