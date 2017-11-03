@@ -89,6 +89,7 @@
                 <br>
 
                 <div class="links">
+                    <a href="{{ route('featured.index') }}">Featured</a>
                     <a href="{{ route('catalogue.index') }}">Catalogue</a>
                     <a href="{{ route('pieces.index') }}">Images</a>
                     <a href="{{ route('details.index') }}">Details</a>
