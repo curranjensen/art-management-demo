@@ -15,6 +15,7 @@ Route::get('/', 'PagesController@index');
 
 Route::get('catalogue', 'CatalogueController@index')->name('catalogue.index');
 Route::get('featured', 'FeaturedController@index')->name('featured.index');
+Route::get('featured/pdf', 'FeaturedController@pdf')->name('featured.pdf');
 
 Route::post('pieces/{piece}/details', 'PieceDetailController@store')->name('pieces.details.store');
 Route::get('pieces/{piece}/details', 'PieceDetailController@show')->name('pieces.details.show');

@@ -32,4 +32,15 @@ class FeaturedController extends Controller
 
         return view('featured.index', compact('details', 'categories'));
     }
+
+    public function pdf()
+    {
+        $categories = Category::orderBy('type')->get();
+
+        $category = request('category_id', false);
+
+        $details = $this->repository->selectForIndex($category);
+
+        return view('featured.pdf', compact('details', 'categories'));
+    }
 }
