@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Piece;
 use File;
 use App\Detail;
 use Illuminate\Console\Command;

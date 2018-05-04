@@ -23,6 +23,11 @@ class ImageProcessor
         $this->image->fit($detail, $path);
     }
 
+    public function exportForFeatured(Detail $detail, $path = null, $fileName = null)
+    {
+        $this->image->fit($detail, $path, $fileName);
+    }
+
     public function cropForWatermark(Detail $detail, $colour, $size, $width, $height, $x, $y)
     {
         $this->image->crop($detail, $colour, $size, $width, $height, $x, $y);

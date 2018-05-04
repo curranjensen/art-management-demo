@@ -14,7 +14,7 @@ class PhotoUploader extends Uploader
 
         $this->file->move(storage_path("app/public/details/{$this->piece->number}"), $file_name);
 
-        $fileObject = $this->thumbnail->make(Storage::get("public/details/{$this->piece->number}/{$file_name}"),
+        $fileObject = $this->thumbnail->make(storage_path("app/public/details/{$this->piece->number}/{$file_name}"),
             storage_path("app/public/details/{$this->piece->number}/lg_{$file_name}"),
             storage_path("app/public/details/{$this->piece->number}/th_{$file_name}"));
 

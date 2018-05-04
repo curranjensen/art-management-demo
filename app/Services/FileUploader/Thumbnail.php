@@ -11,7 +11,7 @@ class Thumbnail
         $height = $image->height();
         $filesize = $image->filesize();
 
-        $image->fit(350, 200)
+        $image->fit(350, 350)
             ->save($large)
             ->fit(70, 50)
             ->save($thumbnail);

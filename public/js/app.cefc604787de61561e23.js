@@ -652,10 +652,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         handleError: function handleError(file, error, xhr) {},
         getShowUrl: function getShowUrl(item) {
-            return 'http://anne.dev/details/' + item;
+            return '/details/' + item;
         },
         getDeleteUrl: function getDeleteUrl(item) {
-            return 'http://anne.dev/details/' + item + '/confirm-delete';
+            return '/details/' + item + '/confirm-delete';
         }
     },
     mounted: function mounted() {

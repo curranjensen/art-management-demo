@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', $piece->name ?? 'Piece')
+@section('title', $piece->name())
 @section('content')
     @component('components.breadcrumbs')
         <li><a href="{{ route('pieces.index') }}">Images</a></li>
@@ -49,9 +49,11 @@
                 <p><strong>File Dimensions:</strong> {{ $detail->width }} x {{ $detail->height }}</p>
                 <p><strong>File Size:</strong> {{ $detail->filesize() }} MB</p>
                 <p><strong>Original File:</strong> {{ $detail->original_file_name }}</p>
+                <p><strong>Uploaded At:</strong> {{ $detail->created_at }}</p>
                 <p><a href="{{ route('details.crop', $detail->id) }}" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Download Watermarked</a>
                 <a href="{{ route('details.download-original', $detail->id) }}" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Download Original</a></p>
                 <catalogue class="btn-sm" url="{{ route('details.in-catalogue', $detail->id) }}" :in-catalogue="{{ $detail->inCatalogue() ? 'true' : 'false' }}"></catalogue>
+                <featured class="btn-sm" url="{{ route('details.is-featured', $detail->id) }}" :is-featured="{{ $detail->isFeatured() ? 'true' : 'false' }}"></featured>
             </div>
         </div>
         <br>

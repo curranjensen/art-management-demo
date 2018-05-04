@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'Detail')
+@section('title', $detail->piece->name() . ' - Detail')
 @section('content')
     @component('components.breadcrumbs')
         <li><a class="active" href="{{ route('pieces.index') }}">Images</a></li>

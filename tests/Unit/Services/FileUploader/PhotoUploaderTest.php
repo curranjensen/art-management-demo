@@ -42,13 +42,11 @@ class PhotoUploaderTest extends TestCase
         $namer->shouldReceive('makeFileName')
             ->once()->with('jpg')->andReturn('test.jpg');
 
-        Storage::shouldReceive('get')->once()->andReturn('');
-
         $thumbnail = m::mock(Thumbnail::class);
 
         $thumbnail->shouldReceive('make')
         ->once()
-        ->with('',
+        ->with(storage_path("app/public/details/{$piece->number}/test.jpg"),
             storage_path("app/public/details/{$piece->number}/lg_test.jpg"),
             storage_path("app/public/details/{$piece->number}/th_test.jpg"))
             ->andReturn(new FileObject(800, 600, 1024));

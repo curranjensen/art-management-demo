@@ -34,12 +34,14 @@ class BatchImageFilesize extends Command
     /**
      * Execute the console command.
      *
-     * @param DetailRepository $detailRepository
      * @return mixed
      */
     public function handle()
     {
-        $details = Detail::where('filesize', 0)->get();
+        $details = Detail::where(function ($query) {
+            $query->where('filesize', 0)
+                ->orWhereNull('filesize');
+                })->get();
 
         $count = count($details);
 

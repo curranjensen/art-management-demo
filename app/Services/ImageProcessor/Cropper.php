@@ -15,7 +15,7 @@ class Cropper
 
         $img->crop($width, $height, $x, $y)
             ->save($detail->originalPath)
-            ->fit(350, 200)
+            ->fit(350, 350)
             ->save($detail->absoluteLarge)
             ->fit(70, 50)
             ->save($detail->absoluteThumbnail);

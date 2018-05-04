@@ -5,7 +5,8 @@ namespace App\Console;
 use App\Console\Commands\DumpDatabase;
 use App\Console\Commands\ExportCatalogue;
 use App\Console\Commands\ExportFeatured;
-use App\Console\Commands\ScanDisk;
+use App\Console\Commands\ExportWeb;
+use App\Console\Commands\ExportFilesize;
 use App\Console\Commands\ImportExcelFile;
 use Illuminate\Console\Scheduling\Schedule;
 use App\Console\Commands\BatchImageFilesize;
@@ -25,7 +26,9 @@ class Kernel extends ConsoleKernel
         BatchImageFilesize::class,
         DumpDatabase::class,
         ExportCatalogue::class,
-        ExportFeatured::class,
+        ExportWeb::class,
+        ExportFilesize::class,
+        ExportFeatured::class
     ];
 
     /**

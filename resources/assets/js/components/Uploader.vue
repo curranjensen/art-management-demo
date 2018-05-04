@@ -76,10 +76,10 @@
             handleError(file, error, xhr) {
             },
             getShowUrl(item) {
-                return 'http://anne.dev/details/' + item;
+                return '/details/' + item;
             },
             getDeleteUrl(item) {
-                return 'http://anne.dev/details/' + item + '/confirm-delete';
+                return '/details/' + item + '/confirm-delete';
             }
         },
         mounted() {

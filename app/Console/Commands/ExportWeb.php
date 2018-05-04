@@ -2,27 +2,27 @@
 
 namespace App\Console\Commands;
 
-use App\Piece;
 use File;
+use Storage;
 use App\Detail;
 use Illuminate\Console\Command;
 use App\Services\ImageProcessor\ImageProcessor;
 
-class BatchWatermarkImages extends Command
+class ExportWeb extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'batch:watermark {number?}';
+    protected $signature = 'export:web';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Resize and watermark Detail Images';
+    protected $description = 'Export images to featured folder';
 
     /**
      * Create a new command instance.
@@ -41,13 +41,11 @@ class BatchWatermarkImages extends Command
      */
     public function handle(ImageProcessor $imageProcessor)
     {
-        File::cleanDirectory(storage_path('app/public/watermarked-batch/'));
+        File::cleanDirectory(storage_path('app/public/web/'));
 
         $details = Detail::select('details.*')
             ->join('pieces', 'pieces.id', '=', 'details.piece_id')
-            ->when($this->argument('number'), function ($q, $number) {
-                return $q->where('pieces.number', $number);
-            })
+            ->where('is_featured', true)
             ->orderBy('pieces.number')
             ->get();
 
@@ -56,7 +54,15 @@ class BatchWatermarkImages extends Command
         $bar = $this->output->createProgressBar($count);
 
         foreach($details as $detail) {
-            $imageProcessor->autoSaveWatermark($detail, storage_path('app/public/watermarked-batch/'));
+            Storage::copy('public/details/' . $detail->piece->number . '/lg_' . $detail->file_name,
+                'public/web/' . $detail->piece->number . '/lg_' . $detail->file_name);
+
+            $fileName = sprintf('%s/%s/%s',
+                storage_path('app/public/web'),
+                $detail->piece->number,
+                $detail->file_name);
+
+            $imageProcessor->exportForFeatured($detail, null, $fileName);
             $bar->advance();
         }
 

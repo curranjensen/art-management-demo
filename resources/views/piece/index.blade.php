@@ -44,8 +44,8 @@
                     <td><a href="{{ route('pieces.show', $piece->number) }}"><img class="img-thumbnail" src="{{ $piece->thumbnail->thumbnail ?? '/img/70x50_placeholder.png' }}"></a></td>
                     <td><a href="{{ route('pieces.show', $piece->number) }}">{{ $piece->name() }}</a></td>
                     <td>{{ $piece->details_count }}</td>
-                    <td>{{ $piece->size() }} "</td>
-                    <td>{{ $piece->centimeters() }} cm</td>
+                    <td>{{ $piece->size ? $piece->size() . ' "' : $piece->size() }}</td>
+                    <td>{{ $piece->size ? $piece->centimeters() . ' cm' : $piece->centimeters() }}</td>
                     <td>{{ $piece->month() }}</td>
                     <td>{{ $piece->year() }}</td>
                     <td><a class="btn btn-sm btn-primary" href="{{ route('pieces.edit', $piece->number) }}"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</a></td>
